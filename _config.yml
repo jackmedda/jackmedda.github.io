@@ -10,8 +10,8 @@ locale                   : "en-US"
 title                    : "Giacomo Medda"
 title_separator          : "-"
 name                     : &name "Giacomo Medda"
-description              : &description "PhD Researcher at the University of Cagliari"
-url                      : "https://giamedda.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : &description "PhD Student at the University of Cagliari"
+url                      : https://giamedda.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jackmedda/giamedda.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Giacomo Medda"
   avatar           : "profile.png"
-  bio              : "PhD Researcher"
+  bio              : "PhD Student"
   location         : "Cagliari, Italy"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=ZG5aEsAAAAAJ&hl=it"
   email            : "giacomo.medda@unica.it"
-  researchgate     : "https://www.researchgate.net/profile/Giacomo-Medda"
+  researchgate     : "Giacomo-Medda"
   uri              :
   bitbucket        :
   codepen          :
@@ -96,20 +96,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/jackmedda"
+  github           : "jackmedda"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/giacomo-medda-4b7047200"
-  orcid            : "https://orcid.org/0000-0002-1300-1876"
+  linkedin         : "in/giacomo-medda-4b7047200"
+  orcid            : "0000-0002-1300-1876"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "https://twitter.com/jackmedda"
+  twitter          : "jackmedda"
   vine             :
   weibo            :
   xing             :
