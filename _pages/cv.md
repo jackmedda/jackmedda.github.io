@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "CV"
-permalink: https://github.com/jackmedda/jackmedda.github.io/blob/master/files/GiacomoMedda_Resume_2023.pdf
+permalink: /blob/master/files/GiacomoMedda_Resume_2023.pdf
 author_profile: true
 redirect_from:
   - /resume
