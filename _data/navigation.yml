@@ -16,7 +16,8 @@ main:
 #     url: /year-archive/
     
   - title: "CV"
-    url: /cv/
+  - url: https://github.com/jackmedda/jackmedda.github.io/blob/master/files/GiacomoMedda_Resume_2023.pdf
+#     url: /cv/
     
 #   - title: "Guide"
 #     url: /markdown/
