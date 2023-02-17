@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "CV"
-permalink: /blob/master/files/GiacomoMedda_Resume_2023.pdf
+permalink: /cv/GiacomoMedda_Resume_2023.pdf
 author_profile: true
 redirect_from:
   - /resume
