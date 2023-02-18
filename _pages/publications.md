@@ -9,6 +9,9 @@ author_profile: true
 *Causal Reasoning for Algorithmic Fairness in Voice Controlled Cyber-Physical Systems*.
 G. Fenu, M. Marras, **G. Medda**, G. Meloni. In: *Pattern Recognition Letters*. (Under Review)
 
+*Information Retrieval to Support Mental Health Issues: A First Approach and Fairness Assessment*.
+V. Kumar, **G. Medda**, D. Reforgiato, D. Riboni, R. Healoui, G. Fenu. In Proceedings of: *Advances in Bias and Fairness in Information Retrieval. BIAS 2023. Communications in Computer and Information Science. Springer.*. (**BIAS 2023**)
+
 *Practical perspectives of consumer fairness in recommendation*.
 L. Boratto, G. Fenu, M. Marras, **G. Medda**. In: *Information Processing & Management*. (**IPM 2023**)
 
