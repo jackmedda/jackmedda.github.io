@@ -12,4 +12,6 @@ Hi there! I am a third-year Ph.D. student at the [University of Cagliari](https:
 
 In my work, I explore how machine learning algorithms can be designed to reduce bias and ensure that recommendations are fair and unbiased for all users. I am also interested in the development of more robust speaker recognition technologies that are capable of accurately identifying and verifying the identity of users, regardless of their gender, ethnicity, or accent.
 
-I received my Master's degree (summa cum laude) in Computer Science from [University of Cagliari](https://www.unica.it/unica/en/homepage.page) before beginning my Ph.D. studies.
+These aspects involve not only analyzing the extent of unfairness affecting a model (such as a recommender system or automatic speaker recognition system) but also mitigating the issue and providing explanations for the observed unfair outcomes.
+
+I received my Master's degree (summa cum laude) in Computer Science from [University of Cagliari](https://www.unica.it/unica/en/homepage.page) in 2020 before beginning my Ph.D. studies in the same year.
