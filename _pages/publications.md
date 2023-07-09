@@ -6,11 +6,11 @@ author_profile: true
 
 ## 2023
 
-*Causal Reasoning for Algorithmic Fairness in Voice Controlled Cyber-Physical Systems*.
-G. Fenu, M. Marras, **G. Medda**, G. Meloni. In: *Pattern Recognition Letters*. <span style="color:red">Under Review</span>
+*Causal reasoning for algorithmic fairness in voice controlled cyber-physical systems*.
+G. Fenu, M. Marras, **G. Medda**, G. Meloni. In: *Pattern Recognition Letters*. (**PRLetters 2023**) [DOI](https://doi.org/10.1016/j.patrec.2023.03.014)
 
 *Information Retrieval to Support Mental Health Issues: A First Approach and Fairness Assessment*.
-V. Kumar, **G. Medda**, D. Reforgiato, D. Riboni, R. Healoui, G. Fenu. In Proceedings of: *Advances in Bias and Fairness in Information Retrieval. BIAS 2023. Communications in Computer and Information Science. Springer.*. (**BIAS 2023**) <span style="color:red">Accepted</span>
+V. Kumar, **G. Medda**, D. Reforgiato, D. Riboni, R. Healoui, G. Fenu. In Proceedings of: *Advances in Bias and Fairness in Information Retrieval. BIAS 2023. Communications in Computer and Information Science (CCIS). Springer.*. (**BIAS 2023**) <span style="color:red">To appear in [CCIS](https://link.springer.com/book/9783031372483)</span>
 
 *Practical perspectives of consumer fairness in recommendation*.
 L. Boratto, G. Fenu, M. Marras, **G. Medda**. In: *Information Processing & Management*. (**IPM 2023**) [DOI](https://doi.org/10.1016/j.ipm.2022.103208)
