@@ -6,6 +6,12 @@ author_profile: true
 
 ## 2023
 
+*GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning*.
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. [Preprint](https://arxiv.org/abs/2304.06182v3)
+
+*Counterfactual Graph Augmentation for Consumer Unfairness Mitigation in Recommender Systems*.
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *32nd ACM International Conference on Information and Knowledge Management, CIKM 2023*. (**CIKM 2023**) [DOI](https://doi.org/10.1145/3583780.3615165)
+
 *Causal reasoning for algorithmic fairness in voice controlled cyber-physical systems*.
 G. Fenu, M. Marras, **G. Medda**, G. Meloni. In: *Pattern Recognition Letters*. (**PRLetters 2023**) [DOI](https://doi.org/10.1016/j.patrec.2023.03.014)
 
