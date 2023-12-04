@@ -15,3 +15,5 @@ In my work, I explore how machine learning algorithms can be designed to reduce 
 These aspects involve not only analyzing the extent of unfairness affecting a model (such as a recommender system or automatic speaker recognition system) but also mitigating the issue and providing explanations for the observed unfair outcomes.
 
 I received my Master's degree (summa cum laude) in Computer Science from [University of Cagliari](https://www.unica.it/unica/en/homepage.page) in 2020 before beginning my Ph.D. studies in the same year.
+
+I have published in top-tier conferences (CIKM 2023, ECIR 2022) and journals (IPM, Pattern Recognition Letters). I have served as a reviewer for conferences (ECIR 2024), workshops (BIAS 2023, KaRS 2023), and journals (Neural Processing Letters, TOIS).
