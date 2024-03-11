@@ -4,6 +4,11 @@ permalink: /publications/
 author_profile: true
 ---
 
+## 2024
+
+*Robustness in Fairness against Edge-level Perturbations in GNN-based Recommendation*.
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *Advances in Information Retrieval - 46th European Conference on IR Research, (ECIR 2024)*. (**ECIR 2024**) [Preprint](https://arxiv.org/abs/2401.13823)
+
 ## 2023
 
 *GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning*.
