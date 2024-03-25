@@ -6,25 +6,25 @@ author_profile: true
 
 ## 2024
 
+*GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning*.
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. Just Accepted in Transactions of Intelligent Systems and Technology (**TIST**) [Preprint](https://arxiv.org/abs/2304.06182v3)
+
 *Robustness in Fairness against Edge-level Perturbations in GNN-based Recommendation*.
-L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *Advances in Information Retrieval - 46th European Conference on IR Research, (ECIR 2024)*. (**ECIR 2024**) [Preprint](https://arxiv.org/abs/2401.13823)
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *Advances in Information Retrieval - 46th European Conference on IR Research, (ECIR 2024)*. (**ECIR 2024**) [DOI](https://doi.org/10.1007/978-3-031-56063-7_3)
 
 ## 2023
-
-*GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning*.
-L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. [Preprint](https://arxiv.org/abs/2304.06182v3)
 
 *Counterfactual Graph Augmentation for Consumer Unfairness Mitigation in Recommender Systems*.
 L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *32nd ACM International Conference on Information and Knowledge Management, CIKM 2023*. (**CIKM 2023**) [DOI](https://doi.org/10.1145/3583780.3615165)
 
 *Causal reasoning for algorithmic fairness in voice controlled cyber-physical systems*.
-G. Fenu, M. Marras, **G. Medda**, G. Meloni. In: *Pattern Recognition Letters*. (**PRLetters 2023**) [DOI](https://doi.org/10.1016/j.patrec.2023.03.014)
+G. Fenu, M. Marras, **G. Medda**, G. Meloni. In: *Pattern Recognition Letters*. (**PRLetters**) [DOI](https://doi.org/10.1016/j.patrec.2023.03.014)
 
 *How Do You Feel? Information Retrieval in Psychotherapy and Fair Ranking Assessment*.
 V. Kumar, **G. Medda**, D. Reforgiato, D. Riboni, R. Healoui, G. Fenu. In Proceedings of: *Advances in Bias and Fairness in Information Retrieval. BIAS 2023. Communications in Computer and Information Science (CCIS). Springer.*. (**BIAS 2023**) [DOI](https://doi.org/10.1007/978-3-031-37249-0_10)
 
 *Practical perspectives of consumer fairness in recommendation*.
-L. Boratto, G. Fenu, M. Marras, **G. Medda**. In: *Information Processing & Management*. (**IPM 2023**) [DOI](https://doi.org/10.1016/j.ipm.2022.103208)
+L. Boratto, G. Fenu, M. Marras, **G. Medda**. In: *Information Processing & Management*. (**IPM**) [DOI](https://doi.org/10.1016/j.ipm.2022.103208)
 
 ## 2022
 
