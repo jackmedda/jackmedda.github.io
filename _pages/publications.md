@@ -4,10 +4,24 @@ permalink: /publications/
 author_profile: true
 ---
 
+## 2025
+
+*GreenFoodLens: Sustainability Labels for Food Recommendation*.
+G. Balloccu, L. Boratto, G. Fenu, M. Marras, **G. Medda**, G. Murgia. In Proceedings of: *19th ACM Conference on Recommender Systems, RecSys 2025*. (**RecSys 2025**) [DOI](https://doi.org/10.1145/3705328.3748165)
+
+*How Fair is Your Diffusion Recommender Model?*.
+D. Malitesta, **G. Medda**, E. Purificato, M.Marras, F. Malliaros, L. Boratto. In Proceedings of: *19th ACM Conference on Recommender Systems, RecSys 2025*. (**RecSys 2025**) [DOI](https://doi.org/10.1145/3705328.3759318)
+
+*Small Data, Big Impact: Navigating Resource Limitations in Point-of-Interest Recommendation for Individuals with Autism*.
+L. Boratto, F. Cena, G. Fenu, M. Marras, N. Mauro, **G. Medda**. In Proceedings of: *48th International ACM SIGIR Conference on Research and Development in Information Retrieval, SIGIR 2025*. (**SIGIR 2025**) [DOI](https://doi.org/10.1145/3726302.3730269)
+
 ## 2024
 
 *GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning*.
-L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. Just Accepted in Transactions of Intelligent Systems and Technology (**TIST**) [Preprint](https://arxiv.org/abs/2304.06182v3)
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In *ACM Transactions of Intelligent Systems and Technology* (**TIST**) [DOI](https://doi.org/10.1145/3655631)
+
+*Fair Augmentation for Graph Collaborative Filtering*.
+L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *18th ACM Conference on Recommender Systems, RecSys 2024*. (**RecSys 2024**) [DOI](https://doi.org/10.1145/3640457.3688064)
 
 *Robustness in Fairness against Edge-level Perturbations in GNN-based Recommendation*.
 L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *Advances in Information Retrieval - 46th European Conference on IR Research, (ECIR 2024)*. (**ECIR 2024**) [DOI](https://doi.org/10.1007/978-3-031-56063-7_3)

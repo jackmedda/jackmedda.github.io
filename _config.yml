@@ -87,8 +87,8 @@ author:
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=ZG5aEsAAAAAJ&hl=it"
-  email            : "giacomo.medda@unica.it"
-  researchgate     : "https://www.researchgate.net/profile/Giacomo-Medda"
+  email            : "jackm.medda@gmail.com"
+  researchgate     :
   uri              :
   bitbucket        :
   codepen          :
@@ -103,13 +103,13 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : "giacomo-medda-4b7047200"
-  orcid            : "https://orcid.org/0000-0002-1300-1876"
+  orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "jackmedda"
+  twitter          :
   vine             :
   weibo            :
   xing             :
