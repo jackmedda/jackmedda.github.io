@@ -8,4 +8,4 @@ redirect_from:
 
 {% include base_path %}
 
-<embed src="{{ site.baseurl }}/files/GiacomoMedda_Resume_2023.pdf" width="600" height="700" type='application/pdf'>
+<embed src="{{ site.baseurl }}/files/GiacomoMedda_Resume_2025.pdf" width="600" height="700" type='application/pdf'>
