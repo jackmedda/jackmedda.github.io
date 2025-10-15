@@ -20,6 +20,9 @@ L. Boratto, F. Cena, G. Fenu, M. Marras, N. Mauro, **G. Medda**. In Proceedings 
 *GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning*.
 L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In *ACM Transactions of Intelligent Systems and Technology* (**TIST**) [DOI](https://doi.org/10.1145/3655631)
 
+*Unlocking {LLM}s: Addressing Scarce Data and Bias Challenges in Mental Health and Therapeutic Counselling*
+V. Kumar, P. S. Rajwat, **G. Medda**, E. Ntoutsi, D. R. Recupero. In Proceedings of: *First International Conference on Natural Language Processing and Artificial Intelligence for Cyber Security, NLPAICS 2024*. (**NLPAICS 2024**) [URL](https://aclanthology.org/2024.nlpaics-1.26/)
+
 *Fair Augmentation for Graph Collaborative Filtering*.
 L. Boratto, F. Fabbri, G. Fenu, M. Marras, **G. Medda**. In Proceedings of: *18th ACM Conference on Recommender Systems, RecSys 2024*. (**RecSys 2024**) [DOI](https://doi.org/10.1145/3640457.3688064)
 
