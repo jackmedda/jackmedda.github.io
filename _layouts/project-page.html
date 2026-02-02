@@ -1,0 +1,294 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="{{ page.title }} - {{ page.authors | join: ', ' }}">
+    <meta name="description" content="{{ page.abstract | truncate: 160 }}">
+    <meta name="keywords" content="{{ page.keywords | join: ', ' }}">
+    <meta name="author" content="{{ page.authors | join: ', ' }}">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.abstract | truncate: 200 }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    {% if page.teaser %}<meta property="og:image" content="{{ page.teaser | absolute_url }}">{% endif %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.abstract | truncate: 200 }}">
+    {% if page.teaser %}<meta name="twitter:image" content="{{ page.teaser | absolute_url }}">{% endif %}
+    
+    <!-- Academic/Research Specific -->
+    <meta name="citation_title" content="{{ page.title }}">
+    {% for author in page.authors %}
+    <meta name="citation_author" content="{{ author }}">
+    {% endfor %}
+    <meta name="citation_publication_date" content="{{ page.year }}">
+    <meta name="citation_conference_title" content="{{ page.venue }}">
+    {% if page.paperurl %}<meta name="citation_pdf_url" content="{{ page.paperurl }}">{% endif %}
+    
+    <title>{{ page.title }} | {{ site.title }}</title>
+    
+    {% include head.html %}
+    {% include head/custom.html %}
+    
+    <!-- Project Page Specific Styles -->
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/project-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- MathJax for LaTeX Math Rendering -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          ignoreHtmlClass: 'tex2jax_ignore',
+          processHtmlClass: 'tex2jax_process'
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+    <!-- Structured Data for Academic Papers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "{{ page.title }}",
+      "description": "{{ page.abstract | truncate: 300 | escape }}",
+      "author": [
+        {% for author in page.authors %}
+        {
+          "@type": "Person",
+          "name": "{{ author }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ page.venue }}"
+      },
+      "url": "{{ page.url | absolute_url }}",
+      "keywords": {{ page.keywords | jsonify }},
+      "isAccessibleForFree": true
+    }
+    </script>
+  </head>
+
+  <body class="project-page-body">
+
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
+
+    <main id="main-content" class="project-page-main">
+      
+      <!-- Hero Section -->
+      <section class="project-hero{% if page.hero_image %} has-hero-image{% endif %}"{% if page.hero_image %} style="--hero-bg: url('{{ page.hero_image | relative_url }}');"{% endif %}>
+        {% if page.hero_image %}<div class="hero-overlay"></div>{% endif %}
+        <div class="project-hero-container">
+          <h1 class="project-title">{{ page.title }}</h1>
+          
+          <div class="project-authors">
+            {% for author in page.authors %}
+              {% if page.author_links[author] %}
+                <a href="{{ page.author_links[author] }}" target="_blank" class="author-link">{{ author }}</a>{% unless forloop.last %}, {% endunless %}
+              {% else %}
+                <span class="author-name">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          
+          <div class="project-venue">
+            <span class="venue-name">{{ page.venue }}</span>
+            {% if page.venue_short %}<span class="venue-short">({{ page.venue_short }})</span>{% endif %}
+            <span class="venue-year">{{ page.year }}</span>
+          </div>
+          
+          <!-- Publication Links -->
+          <div class="project-links">
+            {% if page.paperurl %}
+            <a href="{{ page.paperurl }}" target="_blank" class="project-btn">
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+            {% endif %}
+            
+            {% if page.arxiv %}
+            <a href="{{ page.arxiv }}" target="_blank" class="project-btn">
+              <i class="ai ai-arxiv"></i> arXiv
+            </a>
+            {% endif %}
+            
+            {% if page.code %}
+            <a href="{{ page.code }}" target="_blank" class="project-btn">
+              <i class="fab fa-github"></i> Code
+            </a>
+            {% endif %}
+            
+            {% if page.slides %}
+            <a href="{{ page.slides }}" target="_blank" class="project-btn">
+              <i class="fas fa-presentation"></i> Slides
+            </a>
+            {% endif %}
+            
+            {% if page.video %}
+            <a href="{{ page.video }}" target="_blank" class="project-btn">
+              <i class="fab fa-youtube"></i> Video
+            </a>
+            {% endif %}
+            
+            {% if page.doi %}
+            <a href="https://doi.org/{{ page.doi }}" target="_blank" class="project-btn">
+              <i class="ai ai-doi"></i> DOI
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Teaser Image/Video -->
+      {% if page.teaser or page.teaser_video %}
+      <section class="project-teaser">
+        <div class="project-container">
+          {% if page.teaser_video %}
+          <video autoplay controls muted loop class="teaser-video">
+            <source src="{{ page.teaser_video }}" type="video/mp4">
+          </video>
+          {% elsif page.teaser %}
+          <img src="{{ page.teaser }}" alt="{{ page.title }} - Overview" class="teaser-image">
+          {% endif %}
+          {% if page.teaser_caption %}
+          <p class="teaser-caption">{{ page.teaser_caption }}</p>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- Abstract -->
+      <section class="project-abstract">
+        <div class="project-container">
+          <h2>Abstract</h2>
+          <div class="abstract-content">
+            {{ page.abstract | markdownify }}
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content (custom sections) -->
+      <div class="project-content">
+        <div class="project-container">
+          {{ content }}
+        </div>
+      </div>
+
+      <!-- Image Carousel -->
+      {% if page.carousel_images %}
+      <section class="project-carousel">
+        <div class="project-container">
+          <h2>Results</h2>
+          <div class="carousel-wrapper">
+            <div class="carousel-container" id="carousel">
+              {% for img in page.carousel_images %}
+              <div class="carousel-slide {% if forloop.first %}active{% endif %}">
+                <img src="{{ img.url }}" alt="{{ img.caption }}" loading="lazy">
+                {% if img.caption %}
+                <p class="carousel-caption">{{ img.caption }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" onclick="moveCarousel(1)">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-dots">
+              {% for img in page.carousel_images %}
+              <span class="dot {% if forloop.first %}active{% endif %}" onclick="goToSlide({{ forloop.index0 }})"></span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- YouTube Video -->
+      {% if page.youtube_id %}
+      <section class="project-video">
+        <div class="project-container">
+          <h2>Video Presentation</h2>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/{{ page.youtube_id }}" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- BibTeX Citation -->
+      {% if page.bibtex %}
+      <section class="project-bibtex" id="BibTeX">
+        <div class="project-container">
+          <div class="bibtex-header">
+            <h2>BibTeX</h2>
+            <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+              <i class="fas fa-copy"></i>
+              <span class="copy-text">Copy</span>
+            </button>
+          </div>
+          <pre id="bibtex-code"><code>{{ page.bibtex }}</code></pre>
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- Acknowledgments -->
+      {% if page.acknowledgments %}
+      <section class="project-acknowledgments">
+        <div class="project-container">
+          <h2>Acknowledgments</h2>
+          <p>{{ page.acknowledgments }}</p>
+        </div>
+      </section>
+      {% endif %}
+
+    </main>
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+    <script src="{{ base_path }}/assets/js/project-page.js"></script>
+
+  </body>
+</html>

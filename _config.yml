@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Giacomo Medda"
   avatar           : "profile.jpg"
-  bio              : "Postdoctoral Researcher"
+  bio              : "Postdoc @ UniCA • RecSys • Fairness in AI"
   location         : "Cagliari, Italy"
   employer         :
   pubmed           : 
@@ -187,6 +187,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
 
 # Defaults
@@ -243,6 +246,14 @@ defaults:
     values:
       layout: talk
       author_profile: true
+      share: true
+  # _projects (academic project pages)
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project-page
+      author_profile: false
       share: true
 
 # Sass/SCSS
