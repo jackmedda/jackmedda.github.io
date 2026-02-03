@@ -103,8 +103,8 @@ L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, G. Zedda.<br>
     <a href="https://github.com/jackmedda/RS-BGExplainer" class="pub-link secondary" target="_blank">
       <i class="fab fa-github"></i> Code
     </a>
-    <a href="https://dl.acm.org/doi/pdf/10.1145/3655631" class="pub-link secondary" target="_blank">
-      <i class="fas fa-file-pdf"></i> PDF
+    <a href="https://doi.org/10.1145/3655631" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
     </a>
   </div>
   <h3 class="pub-title">
