@@ -117,7 +117,9 @@ layout: compress
       </div>
     </footer>
 
-    {% include scripts.html %}
+    <!-- NOTE: We intentionally don't include scripts.html here because the theme's
+         main.min.js has an updateNav function that causes infinite recursion
+         with our custom gaming navigation structure -->
     
     <!-- Gaming Interactivity Script -->
     <script>
