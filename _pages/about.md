@@ -1,121 +1,210 @@
 ---
 permalink: /
-title: "About Me"
-excerpt: "About me"
-author_profile: true
+title: "Giacomo Medda"
+layout: gaming-home
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-<style>
-.featured-repos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-.repo-card {
-  border: 1px solid #e1e4e8;
-  border-radius: 8px;
-  padding: 1rem;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.repo-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-}
-.repo-card h4 {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.95rem;
-}
-.repo-card h4 a {
-  color: #0366d6;
-  text-decoration: none;
-}
-.repo-card h4 a:hover {
-  text-decoration: underline;
-}
-.repo-card p {
-  font-size: 0.8rem;
-  color: #586069;
-  margin: 0 0 0.75rem 0;
-  line-height: 1.4;
-}
-.repo-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.75rem;
-  color: #586069;
-}
-.repo-meta span {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.repo-lang {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.lang-python { background-color: #3572A5; }
-.lang-jupyter { background-color: #DA5B0B; }
-</style>
-
-Hi there! I am a **Postdoctoral Researcher** at the [University of Cagliari](https://www.unica.it/unica/en/homepage.page), working on making AI systems more explainable and trustworthy.
-
-My research focuses on **explainability** and **robustness** in **recommender systems**, particularly those based on **graph neural networks**. During my PhD, I investigated how these technologies can impact end-users across different demographic groups.
-
-## Education
-
-- **Ph.D.** in Mathematics and Computer Science, University of Cagliari, 2024 *(summa cum laude)*
-- **M.Sc.** in Computer Science, University of Cagliari *(summa cum laude)*
-- **B.Sc.** in Computer Science, University of Cagliari *(summa cum laude)*
-
-## Publications
-
-My research has been published in top-tier venues including **SIGIR**, **RecSys**, **CIKM**, **ECIR**, **Interspeech**, and journals such as **ACM TIST**, **Information Processing & Management**, and **Pattern Recognition Letters**.
-
-→ [View all publications](/publications/)
-
-## Featured Projects
-
-<div class="featured-repos">
-  <div class="repo-card">
-    <h4>📦 <a href="https://github.com/jackmedda/C-Fairness-RecSys" target="_blank">C-Fairness-RecSys</a></h4>
-    <p>Consumer Fairness in Recommender Systems: contextualizing definitions and mitigations for fair recommendations.</p>
-    <div class="repo-meta">
-      <span><span class="repo-lang lang-jupyter"></span> Jupyter</span>
-      <span>⭐ 10</span>
-      <span>🍴 3</span>
+<div class="gaming-page">
+  <section class="gaming-hero">
+    
+    <!-- Hero Card - Profile + Info -->
+    <div class="hero-card">
+      <div class="hero-avatar-wrapper">
+        <img src="/images/profile.jpg" alt="Giacomo Medda" class="hero-avatar">
+        <div class="avatar-ring"></div>
+        <div class="spyro-badge">
+          <img src="/images/spyro-github.png" alt="Spyro" class="spyro-badge-img">
+        </div>
+      </div>
+      
+      <div class="hero-info">
+        <p class="hero-role">Postdoctoral Researcher</p>
+        <h1 class="hero-title">Giacomo Medda</h1>
+        <p class="hero-affiliation">
+          <i class="fas fa-map-marker-alt"></i> University of Cagliari, Italy
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="repo-card">
-    <h4>📦 <a href="https://github.com/jackmedda/FA4GCF" target="_blank">FA4GCF</a></h4>
-    <p>Fair Augmentation for Graph Collaborative Filtering — framework for fairness-aware graph augmentations in GNN-based recommenders.</p>
-    <div class="repo-meta">
-      <span><span class="repo-lang lang-python"></span> Python</span>
-      <span>⭐ 6</span>
-      <span>🍴 1</span>
+    
+    <!-- Research Focus Tags -->
+    <div class="hero-tags">
+      <span class="hero-tag tag-primary">Explainable AI</span>
+      <span class="hero-tag tag-secondary">Fairness in ML</span>
+      <span class="hero-tag tag-tertiary">Graph Neural Networks</span>
+      <span class="hero-tag tag-quaternary">Recommender Systems</span>
     </div>
-  </div>
-  <div class="repo-card">
-    <h4>📦 <a href="https://github.com/tail-unica/hopwise" target="_blank">hopwise</a></h4>
-    <p>A library for knowledge-aware path reasoning in recommender systems with explainability support.</p>
-    <div class="repo-meta">
-      <span><span class="repo-lang lang-python"></span> Python</span>
+    
+    <!-- Social Links -->
+    <div class="hero-links">
+      <a href="/publications/" class="hero-link link-publications">
+        <i class="fas fa-scroll"></i> Publications
+      </a>
+      <a href="/cv/" class="hero-link link-cv">
+        <i class="fas fa-file-alt"></i> CV
+      </a>
+      <a href="https://github.com/jackmedda" class="hero-link link-github" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://scholar.google.com/citations?user=ZG5aEsAAAAAJ&hl=it" class="hero-link link-scholar" target="_blank">
+        <i class="fas fa-graduation-cap"></i> Scholar
+      </a>
+      <a href="https://linkedin.com/in/giacomo-medda-4b7047200" class="hero-link link-linkedin" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
     </div>
-  </div>
-  <div class="repo-card">
-    <h4>📦 <a href="https://github.com/tail-unica/PHaSEAPI" target="_blank">PHaSEAPI</a></h4>
-    <p>PHASE: A Platform for Hosting and Analyzing Scientific Experiments.</p>
-    <div class="repo-meta">
-      <span><span class="repo-lang lang-python"></span> Python</span>
+    
+    <div class="scroll-indicator">
+      <span class="scroll-indicator-text">Scroll for Research</span>
+      <div class="scroll-indicator-arrow"></div>
     </div>
-  </div>
+  </section>
+  
+  <!-- Selected Publications Section -->
+  <section class="publications-section">
+    <h2 class="section-title">Featured Quests</h2>
+    <p class="section-subtitle">Selected Research Adventures</p>
+    
+    <div class="pub-cards-grid">
+      
+      <!-- GNNUERS -->
+      <div class="pub-card">
+        <span class="pub-card-venue">ACM TIST 2024</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/gnnuers/">GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning</a>
+        </h3>
+        <p class="pub-card-authors">
+          L. Boratto, F. Fabbri, G. Fenu, M. Marras, <strong>G. Medda</strong>
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/gnnuers/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/jackmedda/RS-BGExplainer" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1145/3655631" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
+      
+      <!-- GreenFoodLens -->
+      <div class="pub-card">
+        <span class="pub-card-venue">RecSys 2025</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/greenfoodlens/">GreenFoodLens: Sustainability Labels for Food Recommendation</a>
+        </h3>
+        <p class="pub-card-authors">
+          G. Balloccu, L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, C. Musto
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/greenfoodlens/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/tail-unica/GreenFoodLens" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1145/3705328.3748165" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
+      
+      <!-- FA4GCF -->
+      <div class="pub-card">
+        <span class="pub-card-venue">RecSys 2024</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/fa4gcf/">Fair Augmentation for Graph Collaborative Filtering</a>
+        </h3>
+        <p class="pub-card-authors">
+          L. Boratto, F. Fabbri, G. Fenu, M. Marras, <strong>G. Medda</strong>
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/fa4gcf/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/jackmedda/FA4GCF" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1145/3640457.3688064" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
+      
+      <!-- FairDiffRec -->
+      <div class="pub-card">
+        <span class="pub-card-venue">RecSys 2025</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/fairdiffrec/">How Fair is Your Diffusion Recommender Model?</a>
+        </h3>
+        <p class="pub-card-authors">
+          D. Malitesta, <strong>G. Medda</strong>, E. Purificato, M. Marras, F. Malliaros, L. Boratto
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/fairdiffrec/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/danielemalitesta/FairDiffRec" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1145/3705328.3759318" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
+      
+      <!-- POI-ASD -->
+      <div class="pub-card">
+        <span class="pub-card-venue">SIGIR 2025</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/poi-asd/">Small Data, Big Impact: POI Recommendation for Individuals with Autism</a>
+        </h3>
+        <p class="pub-card-authors">
+          L. Boratto, F. Cena, M. Marras, N. Mauro, <strong>G. Medda</strong>
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/poi-asd/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://doi.org/10.1145/3726302.3730269" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
+      
+      <!-- Consumer Fairness -->
+      <div class="pub-card">
+        <span class="pub-card-venue">ECIR 2022</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/consumer-fairness-recsys/">Consumer Fairness in Recommender Systems: Contextualizing Definitions and Mitigations</a>
+        </h3>
+        <p class="pub-card-authors">
+          L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/consumer-fairness-recsys/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/jackmedda/C-Fairness-RecSys" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1007/978-3-030-99736-6_37" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="view-all-link">
+      <a href="/publications/" class="view-all-btn">
+        <i class="fas fa-scroll"></i> View All Publications
+      </a>
+    </div>
+  </section>
 </div>
-
-→ [View all repositories on GitHub](https://github.com/jackmedda)
 

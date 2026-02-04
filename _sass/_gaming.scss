@@ -1,0 +1,1605 @@
+/* ==========================================================================
+   SPYRO 2 INSPIRED GAMING THEME
+   ========================================================================== */
+
+/* Color Palette - Spyro the Dragon inspired (more vibrant) */
+$spyro-purple: #7B2D9E;
+$spyro-purple-dark: #4A1B6D;
+$spyro-purple-light: #A855F7;
+$spyro-purple-bright: #C084FC;
+$spyro-orange: #FF6B35;
+$spyro-orange-bright: #FF8C42;
+$spyro-gold: #FFD700;
+$spyro-gold-light: #FFEA00;
+$spyro-cyan: #00D4FF;
+$spyro-magenta: #FF00FF;
+$spyro-green: #22C55E;
+$spyro-red: #EF4444;
+$gaming-bg-dark: #0F0326;
+$gaming-bg-mid: #1A0A3E;
+$gaming-bg-gradient: linear-gradient(180deg, #0F0326 0%, #1A0A3E 30%, #2D1B69 70%, #4A1B6D 100%);
+
+/* Gaming Typography */
+$gaming-font-display: 'Bangers', cursive;
+$gaming-font-pixel: 'Press Start 2P', cursive;
+$gaming-font-body: 'Nunito', sans-serif;
+
+/* ==========================================================================
+   GAMING HOMEPAGE LAYOUT
+   ========================================================================== */
+
+.gaming-page {
+  min-height: 100vh;
+  background: $gaming-bg-gradient;
+  overflow-x: hidden;
+  position: relative;
+  
+  /* Animated background grid */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba($spyro-purple, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($spyro-purple, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+    animation: gridPulse 4s ease-in-out infinite;
+  }
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* ==========================================================================
+   FLOATING GEMS - Spyro 2 Authentic Inverted Pyramid Style
+   All gems are inverted pyramids (point DOWN) with different base shapes:
+   - Red: Octagonal base
+   - Green: Triangular base  
+   - Pink: Hexagonal base (replaces blue in Spyro 2)
+   - Yellow/Gold: Square base
+   - Purple: Rectangular base
+   ========================================================================== */
+
+.gem-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* SVG Gem wrapper */
+.gem {
+  position: absolute;
+  animation: gemFloat 5s ease-in-out infinite;
+  opacity: 0.95;
+  transition: transform 0.3s, opacity 0.3s, filter 0.3s;
+  
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* RED - Octagonal pyramid glow */
+  &.gem-red {
+    filter: drop-shadow(0 0 8px #FF5252) drop-shadow(0 0 16px rgba(255, 82, 82, 0.5));
+  }
+  /* GREEN - Triangular pyramid glow */
+  &.gem-green {
+    filter: drop-shadow(0 0 8px #00E676) drop-shadow(0 0 16px rgba(0, 230, 118, 0.5));
+  }
+  /* PINK - Hexagonal pyramid glow (Spyro 2) */
+  &.gem-pink {
+    filter: drop-shadow(0 0 8px #FF4081) drop-shadow(0 0 16px rgba(255, 64, 129, 0.5));
+  }
+  /* GOLD - Square pyramid glow */
+  &.gem-gold {
+    filter: drop-shadow(0 0 12px #FFD600) drop-shadow(0 0 24px rgba(255, 214, 0, 0.6));
+  }
+  /* PURPLE - Rectangular pyramid glow */
+  &.gem-purple {
+    filter: drop-shadow(0 0 10px #AB47BC) drop-shadow(0 0 20px rgba(171, 71, 188, 0.6));
+  }
+  
+  &:hover, &.gem-active {
+    transform: scale(1.8) !important;
+    opacity: 1;
+    animation-play-state: paused;
+  }
+  
+  &.gem-red:hover, &.gem-red.gem-active { 
+    filter: drop-shadow(0 0 18px #FF5252) drop-shadow(0 0 32px rgba(255, 82, 82, 0.85)); 
+  }
+  &.gem-green:hover, &.gem-green.gem-active { 
+    filter: drop-shadow(0 0 18px #00E676) drop-shadow(0 0 32px rgba(0, 230, 118, 0.85)); 
+  }
+  &.gem-pink:hover, &.gem-pink.gem-active { 
+    filter: drop-shadow(0 0 18px #FF4081) drop-shadow(0 0 32px rgba(255, 64, 129, 0.85)); 
+  }
+  &.gem-gold:hover, &.gem-gold.gem-active { 
+    filter: drop-shadow(0 0 24px #FFD600) drop-shadow(0 0 40px rgba(255, 214, 0, 0.9)); 
+  }
+  &.gem-purple:hover, &.gem-purple.gem-active { 
+    filter: drop-shadow(0 0 22px #AB47BC) drop-shadow(0 0 38px rgba(171, 71, 188, 0.9)); 
+  }
+}
+
+/* Float animation - gentle bobbing like in Spyro */
+@keyframes gemFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-12px) rotate(2deg); }
+  50% { transform: translateY(-4px) rotate(0deg); }
+  75% { transform: translateY(-18px) rotate(-2deg); }
+}
+
+/* Size variations - wide gems (wider than tall), purple extra wide */
+.gem-small { 
+  &.gem-red { width: 34px; height: 28px; }
+  &.gem-green { width: 34px; height: 28px; }
+  &.gem-pink { width: 34px; height: 28px; }
+  &.gem-gold { width: 34px; height: 28px; }
+  &.gem-purple { width: 44px; height: 28px; }   /* Extra wide */
+}
+.gem-medium { 
+  &.gem-red { width: 48px; height: 40px; }
+  &.gem-green { width: 48px; height: 40px; }
+  &.gem-pink { width: 48px; height: 40px; }
+  &.gem-gold { width: 48px; height: 40px; }
+  &.gem-purple { width: 60px; height: 38px; }   /* Extra wide */
+}
+.gem-large { 
+  &.gem-red { width: 64px; height: 54px; }
+  &.gem-green { width: 64px; height: 54px; }
+  &.gem-pink { width: 64px; height: 54px; }
+  &.gem-gold { width: 64px; height: 54px; }
+  &.gem-purple { width: 80px; height: 50px; }   /* Extra wide */
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.gaming-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 10;
+}
+
+/* Hero Card - Profile + Name */
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(145deg, rgba($spyro-purple, 0.25), rgba($gaming-bg-dark, 0.7));
+  border: 2px solid rgba($spyro-purple-light, 0.4);
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s ease;
+  
+  &:hover {
+    border-color: $spyro-gold;
+    box-shadow: 0 10px 40px rgba($spyro-purple, 0.3), 0 0 20px rgba($spyro-gold, 0.15);
+    transform: translateY(-3px);
+  }
+}
+
+.hero-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid $spyro-gold;
+  box-shadow: 0 0 20px rgba($spyro-gold, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+  .hero-card:hover & {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba($spyro-gold, 0.6);
+  }
+}
+
+.avatar-ring {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, $spyro-purple-bright, $spyro-gold, $spyro-cyan) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ringRotate 4s linear infinite;
+}
+
+/* Spyro Badge - Second Identity */
+.spyro-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba($gaming-bg-dark, 0.95), rgba($spyro-purple, 0.8));
+  border: 2px solid $spyro-gold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 12px rgba($spyro-gold, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  .hero-card:hover & {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba($spyro-gold, 0.5);
+  }
+}
+
+.spyro-badge-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes ringRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-info {
+  text-align: left;
+}
+
+.hero-role {
+  font-family: $gaming-font-pixel;
+  font-size: 0.55rem;
+  color: $spyro-cyan;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0 0 0.3rem 0;
+}
+
+.hero-title {
+  font-family: $gaming-font-display;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: $spyro-gold;
+  text-shadow: 
+    0 0 10px rgba($spyro-orange, 0.5),
+    2px 2px 0 $spyro-purple-dark;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.1;
+}
+
+.hero-affiliation {
+  font-family: $gaming-font-body;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  
+  i {
+    color: $spyro-orange;
+    margin-right: 0.3rem;
+  }
+}
+
+/* Research Focus Tags */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-tag {
+  font-family: $gaming-font-body;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  cursor: default;
+  
+  &.tag-primary {
+    background: linear-gradient(135deg, rgba($spyro-purple, 0.4), rgba($spyro-purple-dark, 0.6));
+    border: 1px solid $spyro-purple-light;
+    color: $spyro-purple-bright;
+    
+    &:hover {
+      background: linear-gradient(135deg, $spyro-purple, $spyro-purple-dark);
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba($spyro-purple, 0.4);
+    }
+  }
+  
+  &.tag-secondary {
+    background: linear-gradient(135deg, rgba($spyro-cyan, 0.2), rgba($spyro-cyan, 0.1));
+    border: 1px solid rgba($spyro-cyan, 0.5);
+    color: $spyro-cyan;
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba($spyro-cyan, 0.4), rgba($spyro-cyan, 0.3));
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba($spyro-cyan, 0.3);
+    }
+  }
+  
+  &.tag-tertiary {
+    background: linear-gradient(135deg, rgba($spyro-orange, 0.2), rgba($spyro-orange, 0.1));
+    border: 1px solid rgba($spyro-orange, 0.5);
+    color: $spyro-orange;
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba($spyro-orange, 0.4), rgba($spyro-orange, 0.3));
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba($spyro-orange, 0.3);
+    }
+  }
+  
+  &.tag-quaternary {
+    background: linear-gradient(135deg, rgba($spyro-gold, 0.2), rgba($spyro-gold, 0.1));
+    border: 1px solid rgba($spyro-gold, 0.5);
+    color: $spyro-gold;
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba($spyro-gold, 0.4), rgba($spyro-gold, 0.3));
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba($spyro-gold, 0.3);
+    }
+  }
+}
+
+/* ==========================================================================
+   NAVIGATION GEMS (Interactive Menu)
+   ========================================================================== */
+
+.nav-gems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.nav-gem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(145deg, rgba($spyro-purple, 0.3), rgba($spyro-purple-dark, 0.5));
+  border: 2px solid transparent;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 150px;
+  
+  /* Gem shine effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    transform: rotate(45deg) translateY(100%);
+    transition: transform 0.6s;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: $spyro-gold;
+    box-shadow: 
+      0 10px 40px rgba($spyro-purple, 0.4),
+      0 0 20px rgba($spyro-gold, 0.3),
+      inset 0 0 20px rgba($spyro-gold, 0.1);
+    
+    &::before {
+      transform: rotate(45deg) translateY(-100%);
+    }
+    
+    .nav-gem-icon {
+      transform: scale(1.2) rotate(10deg);
+      filter: drop-shadow(0 0 15px currentColor);
+    }
+    
+    .nav-gem-label {
+      color: $spyro-gold;
+    }
+  }
+  
+  &:active {
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+.nav-gem-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s, filter 0.3s;
+  
+  &.icon-research { color: $spyro-cyan; }
+  &.icon-code { color: $spyro-orange; }
+  &.icon-publications { color: $spyro-gold; }
+  &.icon-about { color: $spyro-purple-light; }
+}
+
+.nav-gem-label {
+  font-family: $gaming-font-pixel;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+
+/* ==========================================================================
+   MOUSE TRAIL EFFECT
+   ========================================================================== */
+
+.mouse-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: transform 0.1s ease-out;
+}
+
+.trail-particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  animation: trailFade 1s ease-out forwards;
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* ==========================================================================
+   CLICK SPARKLE EFFECT
+   ========================================================================== */
+
+.click-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.sparkle-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: sparkleExplode 0.8s ease-out forwards;
+}
+
+@keyframes sparkleExplode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0);
+  }
+}
+
+/* ==========================================================================
+   STATS/INFO CARDS
+   ========================================================================== */
+
+.gaming-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(145deg, rgba($spyro-purple, 0.2), rgba($gaming-bg-dark, 0.8));
+  border: 1px solid rgba($spyro-purple-light, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $spyro-purple, $spyro-gold, $spyro-orange);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $spyro-gold;
+    box-shadow: 0 10px 30px rgba($spyro-purple, 0.3);
+    
+    &::after {
+      transform: scaleX(1);
+    }
+    
+    .stat-value {
+      transform: scale(1.1);
+      color: $spyro-gold;
+    }
+  }
+}
+
+.stat-value {
+  font-family: $gaming-font-display;
+  font-size: 2.5rem;
+  color: $spyro-cyan;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.stat-label {
+  font-family: $gaming-font-body;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   SCROLL INDICATOR
+   ========================================================================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.scroll-indicator-text {
+  font-family: $gaming-font-pixel;
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.scroll-indicator-arrow {
+  width: 24px;
+  height: 24px;
+  border-right: 3px solid $spyro-gold;
+  border-bottom: 3px solid $spyro-gold;
+  transform: rotate(45deg);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 24px;
+    gap: 1rem;
+  }
+  
+  .hero-info {
+    text-align: center;
+  }
+  
+  .hero-avatar {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-tags {
+    gap: 0.5rem;
+  }
+  
+  .hero-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .nav-gems {
+    gap: 1rem;
+  }
+  
+  .nav-gem {
+    min-width: 120px;
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-gem-icon {
+    font-size: 2rem;
+  }
+  
+  .gaming-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-card {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .hero-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-link {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+  
+  .nav-gems {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-gem {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .gaming-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   DRAGON MASCOT (Optional animated element)
+   ========================================================================== */
+
+.dragon-mascot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  z-index: 100;
+  cursor: pointer;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  
+  &:hover {
+    transform: scale(1.2) rotate(-5deg);
+    animation: dragonWiggle 0.5s ease-in-out infinite;
+  }
+}
+
+@keyframes dragonWiggle {
+  0%, 100% { transform: scale(1.2) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+}
+
+/* ==========================================================================
+   HERO SOCIAL LINKS (Below Name)
+   ========================================================================== */
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, rgba($spyro-purple, 0.4), rgba($spyro-purple-dark, 0.6));
+  border: 2px solid rgba($spyro-purple-light, 0.4);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: $gaming-font-body;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  
+  i {
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    border-color: $spyro-gold;
+    box-shadow: 0 5px 20px rgba($spyro-gold, 0.3);
+    color: $spyro-gold;
+    
+    i {
+      transform: scale(1.2);
+    }
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  &.link-publications {
+    border-color: rgba($spyro-cyan, 0.5);
+    &:hover { border-color: $spyro-cyan; box-shadow: 0 5px 20px rgba($spyro-cyan, 0.3); color: $spyro-cyan; }
+  }
+  
+  &.link-cv {
+    border-color: rgba($spyro-purple-light, 0.5);
+    &:hover { border-color: $spyro-purple-light; box-shadow: 0 5px 20px rgba($spyro-purple-light, 0.3); color: $spyro-purple-light; }
+  }
+  
+  &.link-github {
+    border-color: rgba($spyro-orange, 0.5);
+    &:hover { border-color: $spyro-orange; box-shadow: 0 5px 20px rgba($spyro-orange, 0.3); color: $spyro-orange; }
+  }
+  
+  &.link-scholar {
+    border-color: rgba($spyro-gold, 0.5);
+    &:hover { border-color: $spyro-gold; box-shadow: 0 5px 20px rgba($spyro-gold, 0.3); color: $spyro-gold; }
+  }
+  
+  &.link-linkedin {
+    border-color: rgba($spyro-cyan, 0.5);
+    &:hover { border-color: $spyro-cyan; box-shadow: 0 5px 20px rgba($spyro-cyan, 0.3); color: $spyro-cyan; }
+  }
+}
+
+/* ==========================================================================
+   PUBLICATION CARDS SECTION
+   ========================================================================== */
+
+.publications-section {
+  position: relative;
+  z-index: 10;
+  padding: 4rem 2rem 6rem;
+  background: linear-gradient(180deg, transparent 0%, rgba($gaming-bg-dark, 0.95) 10%);
+}
+
+.section-title {
+  font-family: $gaming-font-display;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: $spyro-gold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 
+    0 0 10px rgba($spyro-orange, 0.5),
+    3px 3px 0 $spyro-purple-dark;
+}
+
+.section-subtitle {
+  font-family: $gaming-font-pixel;
+  font-size: 0.6rem;
+  color: $spyro-cyan;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 3rem;
+}
+
+.pub-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pub-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba($spyro-purple-dark, 0.6), rgba($gaming-bg-dark, 0.9));
+  border: 2px solid rgba($spyro-purple-light, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  
+  /* Gem corner decoration */
+  &::before {
+    content: '💎';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 2rem;
+    opacity: 0.3;
+    transition: all 0.3s;
+    transform: rotate(15deg);
+  }
+  
+  /* Glowing border effect */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 14px;
+    padding: 2px;
+    background: linear-gradient(135deg, $spyro-purple-bright, $spyro-gold, $spyro-orange, $spyro-cyan);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: transparent;
+    box-shadow: 
+      0 15px 40px rgba($spyro-purple, 0.4),
+      0 0 30px rgba($spyro-gold, 0.2);
+    
+    &::before {
+      opacity: 0.8;
+      transform: rotate(0deg) scale(1.2);
+    }
+    
+    &::after {
+      opacity: 1;
+    }
+    
+    .pub-card-title {
+      color: $spyro-gold;
+    }
+  }
+}
+
+.pub-card-venue {
+  display: inline-block;
+  font-family: $gaming-font-pixel;
+  font-size: 0.5rem;
+  color: $gaming-bg-dark;
+  background: linear-gradient(135deg, $spyro-gold, $spyro-orange);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.pub-card-title {
+  font-family: $gaming-font-body;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  transition: color 0.3s;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover {
+      color: $spyro-gold;
+    }
+  }
+}
+
+.pub-card-authors {
+  font-family: $gaming-font-body;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  
+  strong {
+    color: $spyro-cyan;
+  }
+}
+
+.pub-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pub-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba($spyro-purple, 0.3);
+  border: 1px solid rgba($spyro-purple-light, 0.4);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: $gaming-font-body;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  
+  i {
+    font-size: 0.8rem;
+  }
+  
+  &:hover {
+    background: rgba($spyro-gold, 0.2);
+    border-color: $spyro-gold;
+    color: $spyro-gold;
+    transform: translateY(-2px);
+  }
+  
+  &.link-project {
+    background: linear-gradient(135deg, rgba($spyro-purple, 0.5), rgba($spyro-purple-dark, 0.7));
+    border-color: $spyro-purple-light;
+    
+    &:hover {
+      background: linear-gradient(135deg, $spyro-purple, $spyro-purple-dark);
+      border-color: $spyro-purple-bright;
+      color: #fff;
+    }
+  }
+}
+
+/* View All Publications Link */
+.view-all-link {
+  display: block;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, $spyro-purple, $spyro-purple-dark);
+  border: 3px solid $spyro-gold;
+  border-radius: 50px;
+  color: $spyro-gold;
+  text-decoration: none;
+  font-family: $gaming-font-display;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba($spyro-purple, 0.4);
+  
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(135deg, $spyro-gold, $spyro-orange);
+    color: $gaming-bg-dark;
+    border-color: $spyro-gold-light;
+    box-shadow: 
+      0 10px 30px rgba($spyro-gold, 0.4),
+      0 0 20px rgba($spyro-gold, 0.3);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS FOR PUBLICATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .pub-cards-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .hero-links {
+    gap: 0.75rem;
+  }
+  
+  .hero-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   GAMING PAGE LAYOUT (for Publications, CV, etc.)
+   ========================================================================== */
+
+/* Header Navigation */
+.gaming-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba($gaming-bg-dark, 0.98) 0%, rgba($gaming-bg-dark, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba($spyro-purple-light, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gaming-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.nav-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid $spyro-gold;
+  box-shadow: 0 0 15px rgba($spyro-gold, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: $gaming-font-body;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  
+  i {
+    font-size: 0.85rem;
+  }
+  
+  &:hover {
+    color: $spyro-gold;
+    background: rgba($spyro-purple, 0.3);
+    border-color: rgba($spyro-gold, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  &.active {
+    color: $spyro-gold;
+    background: linear-gradient(135deg, rgba($spyro-purple, 0.5), rgba($spyro-purple-dark, 0.7));
+    border-color: $spyro-gold;
+    box-shadow: 0 0 15px rgba($spyro-gold, 0.2);
+  }
+}
+
+/* Main Content Area */
+.gaming-main {
+  padding-top: 80px; /* Account for fixed header */
+  min-height: calc(100vh - 80px);
+  position: relative;
+  z-index: 10;
+}
+
+.gaming-content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgba($spyro-purple-light, 0.2);
+}
+
+.page-title {
+  font-family: $gaming-font-display;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: $spyro-gold;
+  text-shadow: 
+    0 0 10px rgba($spyro-gold, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.03em;
+}
+
+.page-subtitle {
+  font-family: $gaming-font-body;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Page Content */
+.page-content {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: $gaming-font-body;
+  line-height: 1.7;
+  
+  h2 {
+    font-family: $gaming-font-display;
+    font-size: 2rem;
+    color: $spyro-cyan;
+    margin: 2.5rem 0 1.5rem 0;
+    text-shadow: 0 0 10px rgba($spyro-cyan, 0.3);
+    letter-spacing: 0.02em;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  h3 {
+    font-family: $gaming-font-display;
+    font-size: 1.5rem;
+    color: $spyro-purple-light;
+    margin: 2rem 0 1rem 0;
+  }
+  
+  p {
+    margin: 1rem 0;
+  }
+  
+  a {
+    color: $spyro-gold;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: $spyro-gold-light;
+      border-bottom-color: $spyro-gold;
+    }
+  }
+  
+  ul, ol {
+    padding-left: 1.5rem;
+  }
+  
+  li {
+    margin: 0.5rem 0;
+  }
+  
+  strong {
+    color: #fff;
+  }
+  
+  em {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  code {
+    background: rgba($spyro-purple, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  
+  blockquote {
+    border-left: 4px solid $spyro-gold;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: rgba($spyro-purple, 0.2);
+    border-radius: 0 8px 8px 0;
+    
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* Gaming Footer */
+.gaming-footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+  border-top: 2px solid rgba($spyro-purple-light, 0.2);
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  
+  p {
+    font-family: $gaming-font-body;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   PUBLICATIONS PAGE GAMING STYLES
+   ========================================================================== */
+
+/* Year Headers */
+.publications-year {
+  font-family: $gaming-font-display !important;
+  font-size: 2.5rem !important;
+  color: $spyro-cyan !important;
+  text-shadow: 
+    0 0 15px rgba($spyro-cyan, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3) !important;
+  margin: 3rem 0 1.5rem 0 !important;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid rgba($spyro-cyan, 0.3);
+  letter-spacing: 0.05em;
+  
+  &:first-of-type {
+    margin-top: 0 !important;
+  }
+}
+
+/* Featured Publication Cards */
+.featured-publication {
+  background: linear-gradient(145deg, rgba($spyro-purple, 0.5), rgba($gaming-bg-dark, 0.95));
+  border: 2px solid rgba($spyro-purple-light, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $spyro-gold, $spyro-purple-light, $spyro-cyan);
+  }
+  
+  &:hover {
+    border-color: $spyro-gold;
+    transform: translateY(-3px);
+    box-shadow: 
+      0 10px 30px rgba($spyro-purple, 0.3),
+      0 0 20px rgba($spyro-gold, 0.1);
+  }
+}
+
+.pub-badge {
+  display: inline-block;
+  font-family: $gaming-font-pixel;
+  font-size: 0.5rem;
+  color: $spyro-gold;
+  background: rgba($spyro-gold, 0.15);
+  border: 1px solid rgba($spyro-gold, 0.3);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-family: $gaming-font-body;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  
+  &.primary {
+    background: linear-gradient(135deg, $spyro-purple, $spyro-purple-dark);
+    color: #fff;
+    border: 1px solid $spyro-purple-light;
+    
+    &:hover {
+      background: linear-gradient(135deg, $spyro-purple-light, $spyro-purple);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba($spyro-purple, 0.4);
+    }
+  }
+  
+  &.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      background: rgba($spyro-gold, 0.1);
+      color: $spyro-gold;
+      border-color: rgba($spyro-gold, 0.3);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.pub-title {
+  font-family: $gaming-font-body;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $spyro-gold;
+    }
+  }
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  
+  strong {
+    color: $spyro-gold;
+  }
+}
+
+.pub-venue {
+  font-size: 0.85rem;
+  color: $spyro-cyan;
+  
+  strong {
+    color: $spyro-cyan;
+  }
+}
+
+/* Simple Publication Entry */
+.publication-entry {
+  background: rgba($gaming-bg-dark, 0.9);
+  border: 1px solid rgba($spyro-purple-light, 0.3);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  
+  &:hover {
+    border-color: rgba($spyro-purple-light, 0.5);
+    background: rgba($gaming-bg-dark, 0.95);
+  }
+}
+
+.pub-title-inline {
+  font-weight: 700;
+  color: #fff;
+}
+
+.pub-venue-tag {
+  display: inline-block;
+  font-family: $gaming-font-pixel;
+  font-size: 0.45rem;
+  color: $spyro-cyan;
+  background: rgba($spyro-cyan, 0.1);
+  border: 1px solid rgba($spyro-cyan, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+.pub-links-inline {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: $spyro-gold;
+      background: rgba($spyro-gold, 0.1);
+      border-color: rgba($spyro-gold, 0.3);
+    }
+  }
+}
+
+/* ==========================================================================
+   CV PAGE GAMING STYLES
+   ========================================================================== */
+
+.cv-embed-wrapper {
+  background: rgba($spyro-purple, 0.15);
+  border: 2px solid rgba($spyro-purple-light, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  
+  embed, iframe, object {
+    width: 100%;
+    min-height: 800px;
+    border-radius: 8px;
+    border: none;
+  }
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, $spyro-purple, $spyro-purple-dark);
+  border: 3px solid $spyro-gold;
+  border-radius: 50px;
+  color: $spyro-gold;
+  text-decoration: none;
+  font-family: $gaming-font-display;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(135deg, $spyro-gold, $spyro-orange);
+    color: $gaming-bg-dark;
+    box-shadow: 0 8px 25px rgba($spyro-gold, 0.3);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS FOR GAMING PAGES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .gaming-nav {
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.25rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    
+    span {
+      display: none;
+    }
+    
+    i {
+      font-size: 1rem;
+    }
+  }
+  
+  .nav-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .gaming-content-wrapper {
+    padding: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .featured-publication {
+    padding: 1rem;
+  }
+  
+  .pub-links {
+    flex-direction: column;
+  }
+  
+  .cv-embed-wrapper embed {
+    min-height: 500px;
+  }
+}

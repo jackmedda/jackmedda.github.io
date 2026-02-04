@@ -1,10 +1,9 @@
 ---
 title: "Publications"
+subtitle: "Research Quests & Scholarly Adventures"
 permalink: /publications/
-author_profile: true
+layout: gaming-page
 ---
-
-<link rel="stylesheet" href="/assets/css/publications.css?v=2">
 
 <h2 class="publications-year">2026</h2>
 

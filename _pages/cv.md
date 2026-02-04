@@ -1,11 +1,16 @@
 ---
-layout: archive
+title: "Curriculum Vitae"
+subtitle: "My Academic Journey"
 permalink: /cv/
-author_profile: true
+layout: gaming-page
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+<a href="{{ site.baseurl }}/files/GiacomoMedda_Resume_2025.pdf" class="cv-download-btn" download>
+  <i class="fas fa-download"></i> Download CV
+</a>
 
-<embed src="{{ site.baseurl }}/files/GiacomoMedda_Resume_2025.pdf" width="600" height="700" type='application/pdf'>
+<div class="cv-embed-wrapper">
+  <embed src="{{ site.baseurl }}/files/GiacomoMedda_Resume_2025.pdf" type="application/pdf">
+</div>

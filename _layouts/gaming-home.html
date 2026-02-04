@@ -1,0 +1,477 @@
+---
+layout: compress
+---
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    
+    <!-- Gaming Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Academicons for DOI -->
+    <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css">
+    
+    <style>
+      /* Critical gaming styles for fast initial render */
+      body.gaming-body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0D0221 0%, #1a0a2e 50%, #2d1b4e 100%);
+        min-height: 100vh;
+      }
+      .gaming-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0D0221;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        transition: opacity 0.5s, visibility 0.5s;
+      }
+      .gaming-loading.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loading-gem {
+        width: 50px;
+        height: 44px;
+        background: linear-gradient(135deg, #CE93D8, #9C27B0, #6A1B9A);
+        clip-path: polygon(8% 0%, 92% 0%, 92% 35%, 50% 100%, 8% 35%);
+        animation: loadingPulse 1s ease-in-out infinite;
+      }
+      @keyframes loadingPulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+      }
+    </style>
+  </head>
+
+  <body class="gaming-body">
+    
+    <!-- Loading Screen -->
+    <div class="gaming-loading" id="loadingScreen">
+      <div class="loading-gem"></div>
+    </div>
+
+    <!-- Floating Gems Background -->
+    <div class="gem-container" id="gemContainer"></div>
+    
+    <!-- Mouse Trail Canvas -->
+    <canvas id="mouseTrailCanvas"></canvas>
+
+    {{ content }}
+
+    {% include scripts.html %}
+    
+    <!-- Gaming Interactivity Script -->
+    <script>
+    (function() {
+      'use strict';
+      
+      // ===========================================
+      // CONFIGURATION
+      // ===========================================
+      const CONFIG = {
+        gems: {
+          count: 20,
+          // Spyro 2 gems: Red(1-octagon), Green(2-triangle), Pink(5-hexagon), Gold(10-square), Purple(25-rectangle)
+          colors: ['gem-red', 'gem-red', 'gem-red', 'gem-green', 'gem-green', 'gem-pink', 'gem-pink', 'gem-gold', 'gem-purple']
+        },
+        trail: {
+          enabled: true,
+          particleCount: 20,
+          colors: ['#FF5252', '#00E676', '#FF4081', '#FFD600', '#AB47BC']
+        },
+        sparkle: {
+          particleCount: 15,
+          colors: ['#FFD600', '#FFF59D', '#AB47BC', '#E1BEE7', '#FFFFFF']
+        }
+      };
+
+      // ===========================================
+      // LOADING SCREEN
+      // ===========================================
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          document.getElementById('loadingScreen').classList.add('hidden');
+        }, 500);
+      });
+
+      // ===========================================
+      // FLOATING GEMS - Authentic Spyro SVG Gems
+      // ===========================================
+      
+      // SVG templates - AUTHENTIC SPYRO 2 GEMS (Isometric 3D view)
+      // Wide gems with square-ish bounding boxes (wider than tall)
+      // Short beveled top, point down, rotated toward viewer
+      const GEM_SVGS = {
+        // RED GEM - Octagonal base, wide chunky shape
+        'gem-red': `<svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="redTopG" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#FF6B6B"/>
+              <stop offset="100%" style="stop-color:#FF8A80"/>
+            </linearGradient>
+            <linearGradient id="redLeftG" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#EF5350"/>
+              <stop offset="100%" style="stop-color:#B71C1C"/>
+            </linearGradient>
+            <linearGradient id="redRightG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FF5252"/>
+              <stop offset="100%" style="stop-color:#C62828"/>
+            </linearGradient>
+          </defs>
+          <!-- Top surface (octagonal, short) -->
+          <polygon points="10,2 38,2 46,6 46,10 38,14 10,14 2,10 2,6" fill="url(#redTopG)"/>
+          <!-- Top inner facet -->
+          <polygon points="14,4 34,4 40,8 34,12 14,12 8,8" fill="#FF7043"/>
+          <!-- Front-left face -->
+          <polygon points="2,10 10,14 24,38" fill="url(#redLeftG)"/>
+          <!-- Front face -->
+          <polygon points="10,14 38,14 24,38" fill="#E53935"/>
+          <!-- Front-right face -->
+          <polygon points="38,14 46,10 24,38" fill="url(#redRightG)"/>
+          <!-- Side faces -->
+          <polygon points="2,6 2,10 24,38" fill="#C62828"/>
+          <polygon points="46,6 24,38 46,10" fill="#D32F2F"/>
+          <!-- Top highlight -->
+          <polygon points="8,4 18,3 14,9 6,7" fill="rgba(255,255,255,0.8)"/>
+        </svg>`,
+        
+        // GREEN GEM - Triangular base, wide and short top
+        'gem-green': `<svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="greenTopG" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#81C784"/>
+              <stop offset="100%" style="stop-color:#A5D6A7"/>
+            </linearGradient>
+            <linearGradient id="greenLeftG" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#66BB6A"/>
+              <stop offset="100%" style="stop-color:#1B5E20"/>
+            </linearGradient>
+            <linearGradient id="greenRightG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4CAF50"/>
+              <stop offset="100%" style="stop-color:#2E7D32"/>
+            </linearGradient>
+          </defs>
+          <!-- Top surface (triangular, very short/flat) -->
+          <polygon points="24,2 46,10 2,10" fill="url(#greenTopG)"/>
+          <!-- Top inner facet -->
+          <polygon points="24,4 38,9 10,9" fill="#69F0AE"/>
+          <!-- Left face -->
+          <polygon points="2,10 24,38 10,9" fill="url(#greenLeftG)"/>
+          <!-- Right face -->
+          <polygon points="46,10 24,38 38,9" fill="url(#greenRightG)"/>
+          <!-- Front face -->
+          <polygon points="10,9 38,9 24,38" fill="#43A047"/>
+          <!-- Outer triangular faces -->
+          <polygon points="2,10 10,9 24,38" fill="#388E3C"/>
+          <polygon points="46,10 24,38 38,9" fill="#2E7D32"/>
+          <!-- Top highlight -->
+          <polygon points="14,4 24,2 20,8 10,6" fill="rgba(255,255,255,0.75)"/>
+        </svg>`,
+        
+        // PINK GEM - Hexagonal base, wide chunky shape
+        'gem-pink': `<svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="pinkTopG" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#F48FB1"/>
+              <stop offset="100%" style="stop-color:#F8BBD9"/>
+            </linearGradient>
+            <linearGradient id="pinkLeftG" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#EC407A"/>
+              <stop offset="100%" style="stop-color:#880E4F"/>
+            </linearGradient>
+            <linearGradient id="pinkRightG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#F06292"/>
+              <stop offset="100%" style="stop-color:#AD1457"/>
+            </linearGradient>
+          </defs>
+          <!-- Top surface (hexagonal, short) -->
+          <polygon points="24,2 44,5 44,11 24,14 4,11 4,5" fill="url(#pinkTopG)"/>
+          <!-- Top inner facet -->
+          <polygon points="24,4 38,6 38,10 24,12 10,10 10,6" fill="#F48FB1"/>
+          <!-- Front-left face -->
+          <polygon points="4,11 24,14 24,38" fill="url(#pinkLeftG)"/>
+          <!-- Front-right face -->
+          <polygon points="44,11 24,38 24,14" fill="url(#pinkRightG)"/>
+          <!-- Side faces -->
+          <polygon points="4,5 4,11 24,38" fill="#C2185B"/>
+          <polygon points="44,5 24,38 44,11" fill="#D81B60"/>
+          <!-- Back faces -->
+          <polygon points="24,2 4,5 24,38" fill="#AD1457"/>
+          <polygon points="24,2 44,5 24,38" fill="#C2185B"/>
+          <!-- Top highlight -->
+          <polygon points="10,4 20,2 16,9 8,7" fill="rgba(255,255,255,0.8)"/>
+        </svg>`,
+        
+        // YELLOW GEM - Square-ish, wide chunky shape
+        'gem-gold': `<svg viewBox="0 0 48 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="goldTopG" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#FFF59D"/>
+              <stop offset="100%" style="stop-color:#FFFDE7"/>
+            </linearGradient>
+            <linearGradient id="goldLeftG" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFEE58"/>
+              <stop offset="100%" style="stop-color:#F57F17"/>
+            </linearGradient>
+            <linearGradient id="goldRightG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFF176"/>
+              <stop offset="100%" style="stop-color:#F9A825"/>
+            </linearGradient>
+            <linearGradient id="goldFrontG" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFD600"/>
+              <stop offset="100%" style="stop-color:#FF8F00"/>
+            </linearGradient>
+          </defs>
+          <!-- Top surface (square-ish, short) -->
+          <polygon points="4,3 44,3 44,12 4,12" fill="url(#goldTopG)"/>
+          <!-- Top inner facet -->
+          <polygon points="8,5 40,5 40,10 8,10" fill="#FFF59D"/>
+          <!-- Top bevel -->
+          <polygon points="4,3 44,3 40,5 8,5" fill="#FFFDE7"/>
+          <!-- Front face -->
+          <polygon points="4,12 44,12 24,38" fill="url(#goldFrontG)"/>
+          <!-- Left face -->
+          <polygon points="4,3 4,12 24,38" fill="url(#goldLeftG)"/>
+          <!-- Right face -->
+          <polygon points="44,3 24,38 44,12" fill="url(#goldRightG)"/>
+          <!-- Top highlight -->
+          <polygon points="10,4 22,3 18,9 8,7" fill="rgba(255,255,255,0.85)"/>
+        </svg>`,
+        
+        // PURPLE GEM - Horizontally rectangular (WIDE), point down
+        'gem-purple': `<svg viewBox="0 0 60 38" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="purpleTopG" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#CE93D8"/>
+              <stop offset="100%" style="stop-color:#E1BEE7"/>
+            </linearGradient>
+            <linearGradient id="purpleLeftG" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#BA68C8"/>
+              <stop offset="100%" style="stop-color:#4A148C"/>
+            </linearGradient>
+            <linearGradient id="purpleRightG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#AB47BC"/>
+              <stop offset="100%" style="stop-color:#6A1B9A"/>
+            </linearGradient>
+            <linearGradient id="purpleFrontG" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#9C27B0"/>
+              <stop offset="100%" style="stop-color:#7B1FA2"/>
+            </linearGradient>
+          </defs>
+          <!-- Top surface (horizontally wide rectangle, short) -->
+          <polygon points="4,3 56,3 56,12 4,12" fill="url(#purpleTopG)"/>
+          <!-- Top inner facet -->
+          <polygon points="8,5 52,5 52,10 8,10" fill="#D1C4E9"/>
+          <!-- Top bevel -->
+          <polygon points="4,3 56,3 52,5 8,5" fill="#E1BEE7"/>
+          <!-- Front face -->
+          <polygon points="4,12 56,12 30,36" fill="url(#purpleFrontG)"/>
+          <!-- Left face -->
+          <polygon points="4,3 4,12 30,36" fill="url(#purpleLeftG)"/>
+          <!-- Right face -->
+          <polygon points="56,3 30,36 56,12" fill="url(#purpleRightG)"/>
+          <!-- Top highlight -->
+          <polygon points="12,4 26,3 20,9 10,7" fill="rgba(255,255,255,0.8)"/>
+        </svg>`
+      };
+      
+      function createFloatingGems() {
+        const container = document.getElementById('gemContainer');
+        if (!container) return;
+        
+        const sizes = ['gem-small', 'gem-medium', 'gem-large'];
+        
+        for (let i = 0; i < CONFIG.gems.count; i++) {
+          const gem = document.createElement('div');
+          const colorClass = CONFIG.gems.colors[Math.floor(Math.random() * CONFIG.gems.colors.length)];
+          const sizeClass = sizes[Math.floor(Math.random() * sizes.length)];
+          
+          // Add unique IDs to gradients to avoid conflicts
+          let svgContent = GEM_SVGS[colorClass];
+          const uniqueId = 'g' + i;
+          svgContent = svgContent.replace(/id="(\w+)"/g, 'id="$1_' + uniqueId + '"');
+          svgContent = svgContent.replace(/url\(#(\w+)\)/g, 'url(#$1_' + uniqueId + ')');
+          
+          gem.className = 'gem ' + colorClass + ' ' + sizeClass;
+          gem.innerHTML = svgContent;
+          gem.style.left = (5 + Math.random() * 85) + '%';
+          gem.style.top = (5 + Math.random() * 85) + '%';
+          gem.style.animationDelay = (Math.random() * 5) + 's';
+          gem.style.animationDuration = (4 + Math.random() * 3) + 's';
+          container.appendChild(gem);
+        }
+      }
+
+      // ===========================================
+      // MOUSE TRAIL EFFECT
+      // ===========================================
+      const canvas = document.getElementById('mouseTrailCanvas');
+      const ctx = canvas ? canvas.getContext('2d') : null;
+      let particles = [];
+      let mouseX = 0, mouseY = 0;
+      let animationId;
+
+      function initCanvas() {
+        if (!canvas) return;
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '9998';
+        resizeCanvas();
+      }
+
+      function resizeCanvas() {
+        if (!canvas) return;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor(x, y, color, isClick) {
+          this.x = x;
+          this.y = y;
+          this.color = color;
+          this.size = isClick ? Math.random() * 8 + 4 : Math.random() * 4 + 2;
+          this.speedX = isClick ? (Math.random() - 0.5) * 10 : (Math.random() - 0.5) * 2;
+          this.speedY = isClick ? (Math.random() - 0.5) * 10 : (Math.random() - 0.5) * 2;
+          this.life = 1;
+          this.decay = isClick ? 0.02 : 0.03;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.life -= this.decay;
+          this.size *= 0.96;
+        }
+
+        draw() {
+          if (!ctx) return;
+          ctx.save();
+          ctx.globalAlpha = this.life;
+          ctx.fillStyle = this.color;
+          ctx.shadowColor = this.color;
+          ctx.shadowBlur = 10;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      function addTrailParticle(x, y) {
+        const color = CONFIG.trail.colors[Math.floor(Math.random() * CONFIG.trail.colors.length)];
+        particles.push(new Particle(x, y, color, false));
+        
+        // Limit particles
+        if (particles.length > 100) {
+          particles = particles.slice(-80);
+        }
+      }
+
+      function addClickSparkle(x, y) {
+        for (let i = 0; i < CONFIG.sparkle.particleCount; i++) {
+          const color = CONFIG.sparkle.colors[Math.floor(Math.random() * CONFIG.sparkle.colors.length)];
+          particles.push(new Particle(x, y, color, true));
+        }
+      }
+
+      function animateParticles() {
+        if (!ctx || !canvas) return;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles = particles.filter(p => p.life > 0);
+        
+        particles.forEach(particle => {
+          particle.update();
+          particle.draw();
+        });
+        
+        animationId = requestAnimationFrame(animateParticles);
+      }
+
+      // ===========================================
+      // GEM PROXIMITY EFFECT
+      // ===========================================
+      function updateGemProximity(x, y) {
+        const gems = document.querySelectorAll('.gem');
+        gems.forEach(gem => {
+          const rect = gem.getBoundingClientRect();
+          const gemX = rect.left + rect.width / 2;
+          const gemY = rect.top + rect.height / 2;
+          const distance = Math.sqrt(Math.pow(x - gemX, 2) + Math.pow(y - gemY, 2));
+          
+          if (distance < 100) {
+            gem.classList.add('gem-active');
+            const scale = 1 + (100 - distance) / 200;
+            gem.style.transform = 'scale(' + scale + ')';
+          } else {
+            gem.classList.remove('gem-active');
+          }
+        });
+      }
+
+      // ===========================================
+      // EVENT LISTENERS
+      // ===========================================
+      let lastTrailTime = 0;
+      const trailThrottle = 16; // ~60fps
+
+      document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        const now = Date.now();
+        if (CONFIG.trail.enabled && now - lastTrailTime > trailThrottle) {
+          addTrailParticle(e.clientX, e.clientY);
+          lastTrailTime = now;
+        }
+        
+        updateGemProximity(e.clientX, e.clientY);
+      });
+
+      document.addEventListener('click', function(e) {
+        addClickSparkle(e.clientX, e.clientY);
+        
+        // Add ripple effect to clicked element if it's interactive
+        if (e.target.closest('.nav-gem, .stat-card, .hero-title')) {
+          const element = e.target.closest('.nav-gem, .stat-card, .hero-title');
+          element.style.animation = 'none';
+          element.offsetHeight; // Trigger reflow
+          element.style.animation = '';
+        }
+      });
+
+      window.addEventListener('resize', resizeCanvas);
+
+      // ===========================================
+      // INITIALIZE
+      // ===========================================
+      document.addEventListener('DOMContentLoaded', function() {
+        createFloatingGems();
+        initCanvas();
+        animateParticles();
+      });
+
+    })();
+    </script>
+    
+  </body>
+</html>
