@@ -1,6 +1,6 @@
 ---
 title: "Curriculum Vitae"
-subtitle: "My Academic Journey"
+# subtitle: "My Academic Journey"
 permalink: /cv/
 layout: gaming-page
 redirect_from:
