@@ -101,11 +101,29 @@ layout: compress
       // ===========================================
       // LOADING SCREEN
       // ===========================================
+      function hideLoadingScreen() {
+        var loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+          loadingScreen.classList.add('hidden');
+        }
+      }
+      
+      // Multiple fallbacks to ensure loading screen hides
       window.addEventListener('load', function() {
-        setTimeout(function() {
-          document.getElementById('loadingScreen').classList.add('hidden');
-        }, 500);
+        setTimeout(hideLoadingScreen, 500);
       });
+      
+      // Fallback: if load event already fired or doesn't fire
+      if (document.readyState === 'complete') {
+        setTimeout(hideLoadingScreen, 500);
+      } else {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(hideLoadingScreen, 800);
+        });
+      }
+      
+      // Ultimate fallback: force hide after 3 seconds no matter what
+      setTimeout(hideLoadingScreen, 3000);
 
       // ===========================================
       // FLOATING GEMS - Authentic Spyro SVG Gems
