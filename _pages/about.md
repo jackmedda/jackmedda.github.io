@@ -206,5 +206,29 @@ redirect_from:
       </a>
     </div>
   </section>
+  
+  <!-- Visitor Map Section -->
+  <section class="map-section">
+    <h2 class="section-title">
+      <span class="title-gem">💎</span> World Explorers <span class="title-gem">💎</span>
+    </h2>
+    <p class="section-subtitle">Adventurers who discovered this realm</p>
+    
+    <div class="map-container">
+      <div class="map-glow"></div>
+      <iframe 
+        src="/talkmap/map-gaming.html" 
+        id="visitorMap"
+        title="Visitor Locations Map"
+        loading="lazy">
+      </iframe>
+      <div class="map-overlay-corners">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+      </div>
+    </div>
+  </section>
 </div>
 
