@@ -56,14 +56,14 @@ redirect_from:
       </a>
     </div>
     
-    <div class="scroll-indicator">
+    <a href="#research" class="scroll-indicator">
       <span class="scroll-indicator-text">Scroll for Research</span>
       <div class="scroll-indicator-arrow"></div>
-    </div>
+    </a>
   </section>
   
   <!-- Selected Publications Section -->
-  <section class="publications-section">
+  <section class="publications-section" id="research">
     <h2 class="section-title">Featured Quests</h2>
     <p class="section-subtitle">Selected Research Adventures</p>
     
@@ -216,12 +216,15 @@ redirect_from:
     
     <div class="map-container">
       <div class="map-glow"></div>
-      <iframe 
-        src="/talkmap/map-gaming.html" 
-        id="visitorMap"
-        title="Visitor Locations Map"
-        loading="lazy">
-      </iframe>
+      <div class="clustrmaps-wrapper" id="clustermaps-gaming">
+        <!-- ClustrMaps only works on production domain, shows placeholder locally -->
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=a855f7&w=1000&t=m&d=RdYKbx-D-Wwc0o9jV5Xe80_GDcOM_SW2qsTXQdFTsKw&co=0f0326&cmo=ffd700&cmn=ff6b35&ct=e9d5ff'></script>
+        <noscript>
+          <div style="color: #e9d5ff; text-align: center; padding: 2rem;">
+            <p>🌍 Visitor map loads on the live site</p>
+          </div>
+        </noscript>
+      </div>
       <div class="map-overlay-corners">
         <span class="corner corner-tl"></span>
         <span class="corner corner-tr"></span>

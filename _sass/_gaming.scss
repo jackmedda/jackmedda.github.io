@@ -28,6 +28,11 @@ $gaming-font-body: 'Nunito', sans-serif;
    GAMING HOMEPAGE LAYOUT
    ========================================================================== */
 
+// Enable smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}
+
 .gaming-page {
   min-height: 100vh;
   background: $gaming-bg-gradient;
@@ -188,7 +193,9 @@ $gaming-font-body: 'Nunito', sans-serif;
   align-items: center;
   gap: 2rem;
   padding: 1.5rem 2.5rem;
-  background: linear-gradient(145deg, rgba($spyro-purple, 0.25), rgba($gaming-bg-dark, 0.7));
+  background: linear-gradient(145deg, rgba($spyro-purple, 0.4), rgba($gaming-bg-dark, 0.85));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 2px solid rgba($spyro-purple-light, 0.4);
   border-radius: 100px;
   margin-bottom: 1.5rem;
@@ -316,6 +323,11 @@ $gaming-font-body: 'Nunito', sans-serif;
   gap: 0.75rem;
   margin-bottom: 2rem;
   max-width: 600px;
+  padding: 1rem 1.5rem;
+  background: rgba($gaming-bg-dark, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 30px;
 }
 
 .hero-tag {
@@ -613,6 +625,17 @@ $gaming-font-body: 'Nunito', sans-serif;
   align-items: center;
   animation: bounce 2s ease-in-out infinite;
   cursor: pointer;
+  text-decoration: none;
+  
+  &:hover {
+    .scroll-indicator-text {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .scroll-indicator-arrow {
+      border-color: $spyro-orange;
+    }
+  }
 }
 
 .scroll-indicator-text {
@@ -759,6 +782,11 @@ $gaming-font-body: 'Nunito', sans-serif;
   justify-content: center;
   gap: 1rem;
   margin: 1.5rem 0 2.5rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba($gaming-bg-dark, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 40px;
 }
 
 .hero-link {
@@ -843,7 +871,15 @@ $gaming-font-body: 'Nunito', sans-serif;
   position: relative;
   z-index: 10;
   padding: 4rem 2rem 6rem;
-  background: linear-gradient(180deg, transparent 0%, rgba($gaming-bg-dark, 0.95) 10%);
+  // Lighter at top, darker in center, lighter at bottom (tunnel effect)
+  background: linear-gradient(180deg, 
+    transparent 0%,
+    rgba($gaming-bg-dark, 0.7) 10%,
+    rgba($gaming-bg-dark, 0.95) 30%,
+    rgba($gaming-bg-dark, 0.98) 50%,
+    rgba($gaming-bg-dark, 0.95) 70%,
+    rgba($gaming-bg-dark, 0.7) 90%,
+    transparent 100%);
 }
 
 .section-title {
@@ -1067,9 +1103,10 @@ $gaming-font-body: 'Nunito', sans-serif;
 .map-section {
   padding: 4rem 2rem 6rem;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
+  background: transparent;
   
   .section-title {
     text-align: center;
@@ -1112,20 +1149,26 @@ $gaming-font-body: 'Nunito', sans-serif;
   max-width: 1000px;
   margin: 0 auto;
   border-radius: 20px;
-  overflow: hidden;
-  background: rgba($spyro-purple-dark, 0.5);
+  overflow: visible; // Changed from hidden to allow ClustrMaps to render
+  background: #0f0326;
   border: 3px solid $spyro-purple-light;
   box-shadow: 
     0 0 30px rgba($spyro-purple-light, 0.3),
     0 20px 60px rgba(0, 0, 0, 0.5),
     inset 0 0 100px rgba($spyro-purple, 0.1);
+  padding: 1rem;
   
-  iframe {
+  .clustrmaps-wrapper {
     width: 100%;
-    height: 500px;
-    border: none;
     display: block;
-    filter: saturate(0.8) hue-rotate(20deg);
+    text-align: center;
+    min-height: 400px;
+    
+    // Ensure ClustrMaps image/canvas is visible
+    img, canvas, a {
+      display: inline-block !important;
+      max-width: 100%;
+    }
   }
 }
 
@@ -1204,8 +1247,10 @@ $gaming-font-body: 'Nunito', sans-serif;
     }
   }
   
-  .map-container iframe {
-    height: 350px;
+  .map-container {
+    .clustrmaps-wrapper {
+      min-height: 300px;
+    }
   }
 }
 
