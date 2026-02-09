@@ -31,10 +31,10 @@ redirect_from:
     
     <!-- Research Focus Tags -->
     <div class="hero-tags">
-      <span class="hero-tag tag-primary">Explainable AI</span>
-      <span class="hero-tag tag-secondary">Fairness in ML</span>
-      <span class="hero-tag tag-tertiary">Graph Neural Networks</span>
-      <span class="hero-tag tag-quaternary">Recommender Systems</span>
+      <span class="hero-tag tag-primary">Recommender Systems</span>
+      <span class="hero-tag tag-secondary">Graph Neural Networks</span>
+      <span class="hero-tag tag-tertiary">Explainable AI</span>
+      <span class="hero-tag tag-quaternary">Fairness in ML</span>
     </div>
     
     <!-- Social Links -->
@@ -135,42 +135,45 @@ redirect_from:
         </div>
       </div>
       
-      <!-- FairDiffRec -->
+      <!-- hopwise -->
       <div class="pub-card">
-        <span class="pub-card-venue">RecSys 2025</span>
+        <span class="pub-card-venue">CIKM 2025</span>
         <h3 class="pub-card-title">
-          <a href="/projects/fairdiffrec/">How Fair is Your Diffusion Recommender Model?</a>
+          <a href="/projects/hopwise/">hopwise: A Python Library for Explainable Recommendation based on Path Reasoning over Knowledge Graphs</a>
         </h3>
         <p class="pub-card-authors">
-          D. Malitesta, <strong>G. Medda</strong>, E. Purificato, M. Marras, F. Malliaros, L. Boratto
+          L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, A. Soccol
         </p>
         <div class="pub-card-links">
-          <a href="/projects/fairdiffrec/" class="pub-card-link link-project">
+          <a href="/projects/hopwise/" class="pub-card-link link-project">
             <i class="fas fa-flask"></i> Project
           </a>
-          <a href="https://github.com/danielemalitesta/FairDiffRec" class="pub-card-link" target="_blank">
+          <a href="https://github.com/tail-unica/hopwise" class="pub-card-link" target="_blank">
             <i class="fab fa-github"></i> Code
           </a>
-          <a href="https://doi.org/10.1145/3705328.3759318" class="pub-card-link" target="_blank">
+          <a href="https://doi.org/10.1145/3746252.3761641" class="pub-card-link" target="_blank">
             <i class="ai ai-doi"></i> DOI
           </a>
         </div>
       </div>
       
-      <!-- POI-ASD -->
+      <!-- IC-AnnoMI -->
       <div class="pub-card">
-        <span class="pub-card-venue">SIGIR 2025</span>
+        <span class="pub-card-venue">NLPAICs 2024</span>
         <h3 class="pub-card-title">
-          <a href="/projects/poi-asd/">Small Data, Big Impact: POI Recommendation for Individuals with Autism</a>
+          <a href="/projects/ic-annomi/">Unlocking LLMs: Addressing Scarce Data and Bias Challenges in Mental Health</a>
         </h3>
         <p class="pub-card-authors">
-          L. Boratto, F. Cena, M. Marras, N. Mauro, <strong>G. Medda</strong>
+          V. Kumar, E. Ntoutsi, P. S. Rajwat, <strong>G. Medda</strong>, D. Reforgiato Recupero
         </p>
         <div class="pub-card-links">
-          <a href="/projects/poi-asd/" class="pub-card-link link-project">
+          <a href="/projects/ic-annomi/" class="pub-card-link link-project">
             <i class="fas fa-flask"></i> Project
           </a>
-          <a href="https://doi.org/10.1145/3726302.3730269" class="pub-card-link" target="_blank">
+          <a href="https://github.com/Exploring-MI/IC-AnnoMI" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://aclanthology.org/2024.nlpaics-1.26/" class="pub-card-link" target="_blank">
             <i class="ai ai-doi"></i> DOI
           </a>
         </div>

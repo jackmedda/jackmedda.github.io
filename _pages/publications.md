@@ -18,6 +18,31 @@ L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, G. Zedda.<br>
 
 <h2 class="publications-year">2025</h2>
 
+<!-- Featured Publication: hopwise -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/hopwise/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/tail-unica/hopwise" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="https://doi.org/10.1145/3746252.3761641" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/hopwise/">hopwise: A Python Library for Explainable Recommendation based on Path Reasoning over Knowledge Graphs</a>
+  </h3>
+  <div class="pub-authors">
+    L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, A. Soccol
+  </div>
+  <div class="pub-venue">
+    34th ACM International Conference on Information and Knowledge Management <strong>(CIKM 2025)</strong>
+  </div>
+</div>
+
 <!-- Featured Publication: GreenFoodLens -->
 <div class="featured-publication">
   <span class="pub-badge">✦ Featured Research</span>
