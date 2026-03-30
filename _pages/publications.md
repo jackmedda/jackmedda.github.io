@@ -7,13 +7,29 @@ layout: gaming-page
 
 <h2 class="publications-year">2026</h2>
 
-<div class="publication-entry">
-<span class="pub-title-inline">FoodNexus: Massive Food Knowledge for Recommender Systems</span>.<br>
-L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, G. Zedda.<br>
-<em>Advances in Information Retrieval - 48th European Conference on IR Research</em> <span class="pub-venue-tag">ECIR 2026</span>
-<div class="pub-links-inline">
-<span style="color: #10b981; font-weight: 500;">✓ Accepted</span>
-</div>
+<!-- Featured Publication: FoodNexus -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/food-nexus/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/tail-unica/food-nexus" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="https://doi.org/10.1007/978-3-032-21321-1_52" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/food-nexus/">FoodNexus: Massive Food Knowledge for Recommender Systems</a>
+  </h3>
+  <div class="pub-authors">
+    L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, G. Zedda
+  </div>
+  <div class="pub-venue">
+    48th European Conference on Information Retrieval <strong>(ECIR 2026)</strong>
+  </div>
 </div>
 
 <h2 class="publications-year">2025</h2>
