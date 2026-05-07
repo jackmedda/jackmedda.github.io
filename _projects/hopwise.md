@@ -19,11 +19,11 @@ authors:
   - "Alessandro Soccol"
 
 author_links:
-  Ludovico Boratto: "https://scholar.google.com/citations?user=1unjC10AAAAJ"
-  Gianni Fenu: "https://scholar.google.com/citations?user=rP3KMr8AAAAJ"
-  Mirko Marras: "https://scholar.google.com/citations?user=Cl2L9Q0AAAAJ"
+  Ludovico Boratto: "https://www.ludovicoboratto.com/"
+  Gianni Fenu: "https://web.unica.it/unica/page/it/gianni_fenu"
+  Mirko Marras: "https://www.mirkomarras.com/"
   Giacomo Medda: "https://jackmedda.github.io"
-  Alessandro Soccol: "https://scholar.google.com/citations?user=soccol"
+  Alessandro Soccol: "https://alessandrosocc.github.io/"
 
 keywords:
   - Recommender Systems

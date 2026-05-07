@@ -20,7 +20,7 @@ authors:
 
 author_links:
   Ludovico Boratto: "https://www.ludovicoboratto.com/"
-  Francesco Fabbri: "https://fraboeni.github.io/"
+  Francesco Fabbri: "https://frafabbri.github.io/"
   Gianni Fenu: "https://web.unica.it/unica/page/it/gianni_fenu"
   Mirko Marras: "https://www.mirkomarras.com/"
   Giacomo Medda: "https://jackmedda.github.io/"
