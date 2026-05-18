@@ -7,6 +7,34 @@ layout: gaming-page
 
 <h2 class="publications-year">2026</h2>
 
+<!-- Featured Publication: LLMFoodPersona -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="#" class="pub-link primary">
+    <!-- <a href="/projects/llm-food-persona/" class="pub-link primary"> -->
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/tail-unica/food-digital-twin" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="#" class="pub-link secondary" target="_blank">
+    <!-- <a href="https://doi.org/10.1145/3774935.3806159" class="pub-link secondary" target="_blank"> -->
+      <i class="ai ai-doi"></i> Just Accepted
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="#">Evaluating the Role of Context Representations in the Behavioral Fidelity of LLM-based Personas for Food Preferences</a>
+    <!-- <a href="/projects/llm-food-persona/">Evaluating the Role of Context Representations in the Behavioral Fidelity of LLM-based Personas for Food Preferences</a> -->
+  </h3>
+  <div class="pub-authors">
+    E. Balloccu, L. Boratto, A. G. Cossatin, M. Marras, N. Mauro, <strong>G. Medda</strong>
+  </div>
+  <div class="pub-venue">
+    34th International Conference on User Modeling, Adaptation, and Personalization <strong>(ACM UMAP 2026)</strong>
+  </div>
+</div>
+
 <!-- Featured Publication: Intersectional FA4GCF -->
 <div class="featured-publication">
   <span class="pub-badge">✦ Featured Research</span>
