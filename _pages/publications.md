@@ -7,25 +7,47 @@ layout: gaming-page
 
 <h2 class="publications-year">2026</h2>
 
+<!-- Featured Publication: hoploy -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/hoploy/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/tail-unica/hoploy" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="#" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> Just Accepted
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/hoploy/">hoploy: a Plugin-Based Inference Layer for Path-Based Explainable Recommendation over Knowledge Graphs</a>
+  </h3>
+  <div class="pub-authors">
+    L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, A. Sechi
+  </div>
+  <div class="pub-venue">
+    20th ACM Conference on Recommender Systems <strong>(RecSys 2026)</strong>
+  </div>
+</div>
+
 <!-- Featured Publication: LLMFoodPersona -->
 <div class="featured-publication">
   <span class="pub-badge">✦ Featured Research</span>
   <div class="pub-links">
-    <a href="#" class="pub-link primary">
-    <!-- <a href="/projects/llm-food-persona/" class="pub-link primary"> -->
+    <a href="/projects/llm-food-persona/" class="pub-link primary">
       <i class="fas fa-flask"></i> Project
     </a>
     <a href="https://github.com/tail-unica/food-digital-twin" class="pub-link secondary" target="_blank">
       <i class="fab fa-github"></i> Code
     </a>
-    <a href="#" class="pub-link secondary" target="_blank">
-    <!-- <a href="https://doi.org/10.1145/3774935.3806159" class="pub-link secondary" target="_blank"> -->
-      <i class="ai ai-doi"></i> Just Accepted
+    <a href="https://doi.org/10.1145/3774935.3806159" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
     </a>
   </div>
   <h3 class="pub-title">
-    <a href="#">Evaluating the Role of Context Representations in the Behavioral Fidelity of LLM-based Personas for Food Preferences</a>
-    <!-- <a href="/projects/llm-food-persona/">Evaluating the Role of Context Representations in the Behavioral Fidelity of LLM-based Personas for Food Preferences</a> -->
+    <a href="/projects/llm-food-persona/">Evaluating the Role of Context Representations in the Behavioral Fidelity of LLM-based Personas for Food Preferences</a>
   </h3>
   <div class="pub-authors">
     E. Balloccu, L. Boratto, A. G. Cossatin, M. Marras, N. Mauro, <strong>G. Medda</strong>

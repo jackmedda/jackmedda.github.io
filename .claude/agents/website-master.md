@@ -57,6 +57,48 @@ Use this format when a project page exists at `_projects/{slug}.md`:
 </div>
 ```
 
+### Just Accepted (accepted but not yet published, no DOI)
+
+Use this when the paper is accepted but not yet published. There is **no DOI**,
+so the DOI slot shows the label **"Just Accepted"** with a `#` href. The
+**Project link and the title link must still point to the live project page**
+(`/projects/slug/`) so that clicking the card navigates to it — the only thing
+that changes vs. a published entry is the DOI slot.
+
+```html
+<!-- Featured Publication: Project Name -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/slug/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/repo" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="#" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> Just Accepted
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/slug/">Paper Title</a>
+  </h3>
+  <div class="pub-authors">
+    Author1, Author2, <strong>G. Medda</strong>, Author3
+  </div>
+  <div class="pub-venue">
+    Venue Name <strong>(ABBREV YEAR)</strong>
+  </div>
+</div>
+```
+
+> **Never leave a Project/title link as `href="#"`.** The card must always
+> navigate to the project page. A `#` is only acceptable on the DOI slot of a
+> Just Accepted paper (labeled "Just Accepted"). If you catch yourself leaving a
+> bare `#` on a Project or title link, treat it as an edge case: point it at the
+> real `/projects/slug/` page now, or confirm with the user whether that page is
+> meant to be published in a second moment.
+
 ### Compact Entry (for publications without project pages)
 
 ```html
@@ -104,7 +146,7 @@ bundle exec jekyll serve --config _config.dev.yml --livereload
 
 Before confirming integration:
 - [ ] Project page renders correctly
-- [ ] Publications.md entry links to correct project
+- [ ] Publications.md entry links to correct project (Project + title hrefs point to `/projects/slug/`, never `#`)
 - [ ] All external links (DOI, GitHub) are valid
 - [ ] Author formatting is consistent (G. Medda in bold)
 - [ ] Venue formatting matches other entries
