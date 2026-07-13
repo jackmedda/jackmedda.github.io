@@ -221,7 +221,7 @@ redirect_from:
       <div class="map-glow"></div>
       <div class="clustrmaps-wrapper" id="clustermaps-gaming">
         <!-- ClustrMaps only works on production domain, shows placeholder locally -->
-        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=a855f7&w=1000&t=m&d=RdYKbx-D-Wwc0o9jV5Xe80_GDcOM_SW2qsTXQdFTsKw&co=0f0326&cmo=ffd700&cmn=ff6b35&ct=e9d5ff'></script>
+        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=-85n8yjYLOZfkdMP3F1VDOwk1ePYu0ilqgh3giUEUiI&cl=ffffff&w=a"></script>
         <noscript>
           <div style="color: #e9d5ff; text-align: center; padding: 2rem;">
             <p>🌍 Visitor map loads on the live site</p>
