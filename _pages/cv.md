@@ -7,10 +7,10 @@ redirect_from:
   - /resume
 ---
 
-<a href="{{ site.baseurl }}/files/GiacomoMedda_Resume_2025.pdf" class="cv-download-btn" download>
+<a href="{{ site.baseurl }}/files/GiacomoMedda_Resume_2026.pdf" class="cv-download-btn" download>
   <i class="fas fa-download"></i> Download CV
 </a>
 
 <div class="cv-embed-wrapper">
-  <embed src="{{ site.baseurl }}/files/GiacomoMedda_Resume_2025.pdf" type="application/pdf">
+  <embed src="{{ site.baseurl }}/files/GiacomoMedda_Resume_2026.pdf" type="application/pdf">
 </div>
