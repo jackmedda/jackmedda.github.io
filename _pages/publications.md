@@ -7,6 +7,81 @@ layout: gaming-page
 
 <h2 class="publications-year">2026</h2>
 
+<!-- Featured Publication: Conformal LLM-as-a-Judge -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/conformal-llm-judge/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/maddalena-amendola/conformal_prediction_recsys" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="#" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> Just Accepted
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/conformal-llm-judge/">Conformal Prediction for Statistically Reliable LLM-as-a-Judge in Recommender Systems</a>
+  </h3>
+  <div class="pub-authors">
+    M. Amendola, <strong>G. Medda</strong>, A. Soccol, L. Boratto, M. Marras, R. Perego
+  </div>
+  <div class="pub-venue">
+    35th ACM International Conference on Information and Knowledge Management <strong>(CIKM 2026)</strong>
+  </div>
+</div>
+
+<!-- Featured Publication: Compresso -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/compresso/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/zombak79/compresso" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="https://doi.org/10.1145/3773078.3841254" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/compresso/">Compresso: Espresso-Style Sparse Representation Learning for Interpretable Recommender Systems</a>
+  </h3>
+  <div class="pub-authors">
+    V. Vančura, <strong>G. Medda</strong>, M. Spišák, L. Peška
+  </div>
+  <div class="pub-venue">
+    20th ACM Conference on Recommender Systems <strong>(RecSys 2026)</strong>
+  </div>
+</div>
+
+<!-- Featured Publication: SAE Domain Adapters -->
+<div class="featured-publication">
+  <span class="pub-badge">✦ Featured Research</span>
+  <div class="pub-links">
+    <a href="/projects/sae-adapters/" class="pub-link primary">
+      <i class="fas fa-flask"></i> Project
+    </a>
+    <a href="https://github.com/zombak79/sae_adaptors" class="pub-link secondary" target="_blank">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="https://doi.org/10.1145/3773078.3841253" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
+    </a>
+  </div>
+  <h3 class="pub-title">
+    <a href="/projects/sae-adapters/">Sparse Autoencoders as Semantic Domain Adapters for Recommender Systems</a>
+  </h3>
+  <div class="pub-authors">
+    V. Vančura, <strong>G. Medda</strong>, M. Spišák, L. Peška
+  </div>
+  <div class="pub-venue">
+    20th ACM Conference on Recommender Systems <strong>(RecSys 2026)</strong>
+  </div>
+</div>
+
 <!-- Featured Publication: hoploy -->
 <div class="featured-publication">
   <span class="pub-badge">✦ Featured Research</span>
@@ -17,8 +92,8 @@ layout: gaming-page
     <a href="https://github.com/tail-unica/hoploy" class="pub-link secondary" target="_blank">
       <i class="fab fa-github"></i> Code
     </a>
-    <a href="#" class="pub-link secondary" target="_blank">
-      <i class="ai ai-doi"></i> Just Accepted
+    <a href="https://doi.org/10.1145/3773078.3831856" class="pub-link secondary" target="_blank">
+      <i class="ai ai-doi"></i> DOI
     </a>
   </div>
   <h3 class="pub-title">

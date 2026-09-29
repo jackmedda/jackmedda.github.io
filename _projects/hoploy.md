@@ -41,14 +41,22 @@ abstract: |
 
 # BibTeX citation
 bibtex: |
-  @inproceedings{boratto2026hoploy,
+  @inproceedings{10.1145/3773078.3831856,
     author = {Boratto, Ludovico and Fenu, Gianni and Marras, Mirko and Medda, Giacomo and Sechi, Alessio},
     title = {hoploy: a Plugin-Based Inference Layer for Path-Based Explainable Recommendation over Knowledge Graphs},
-    booktitle = {Proceedings of the 20th ACM Conference on Recommender Systems},
-    series = {RecSys '26},
     year = {2026},
-    publisher = {ACM},
-    note = {Resource paper, just accepted}
+    isbn = {9798400722844},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3773078.3831856},
+    doi = {10.1145/3773078.3831856},
+    abstract = {Path-based reasoning over knowledge graphs (KGs) is a promising approach for explainable recommendation, as it justifies recommendations through entity-relation paths connecting user preferences to suggested items. However, existing implementations mainly target offline training and evaluation, while interactive deployment requires domain-specific handling of model loading, KG access, decoding, and explanation generation. In this paper, we present hoploy, an open-source inference and explanation layer, for the hopwise ecosystem, that exposes pre-trained path-reasoning models through configurable APIs. hoploy supports stateless scenarios where users are unknown at training time and provide preferences only at request time. Its plugin architecture lets developers define request/response schemas, configuration files, and decoding logic that maps KG tokens into human-readable explanations. We release and demonstrate hoploy under the point-of-interest and food domains, assess their implementation effort and serving footprint, and provide documentation for supporting future usage and extension. Resource: https://github.com/tail-unica/hoploy.},
+    booktitle = {Proceedings of the 20th ACM Conference on Recommender Systems},
+    pages = {904–909},
+    numpages = {6},
+    keywords = {Explainable Recommendation, Knowledge Graphs, Path Reasoning, Software Resource, Plugin Architecture},
+    location = {Minneapolis, MN, USA},
+    series = {RecSys '26}
   }
 ---
 

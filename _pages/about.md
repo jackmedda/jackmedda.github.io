@@ -68,24 +68,24 @@ redirect_from:
     <p class="section-subtitle">Selected Research Adventures</p>
     
     <div class="pub-cards-grid">
-      
-      <!-- GNNUERS -->
+
+      <!-- Intersectional FA4GCF -->
       <div class="pub-card">
-        <span class="pub-card-venue">ACM TIST 2024</span>
+        <span class="pub-card-venue">ACM TORS 2026</span>
         <h3 class="pub-card-title">
-          <a href="/projects/gnnuers/">GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning</a>
+          <a href="/projects/intersectional-fa4gcf/">Graph Augmentation for Intersectional Unfairness Mitigation: A Study across Dataset Scales and Interaction Densities</a>
         </h3>
         <p class="pub-card-authors">
           L. Boratto, F. Fabbri, G. Fenu, M. Marras, <strong>G. Medda</strong>
         </p>
         <div class="pub-card-links">
-          <a href="/projects/gnnuers/" class="pub-card-link link-project">
+          <a href="/projects/intersectional-fa4gcf/" class="pub-card-link link-project">
             <i class="fas fa-flask"></i> Project
           </a>
-          <a href="https://github.com/jackmedda/RS-BGExplainer" class="pub-card-link" target="_blank">
+          <a href="https://github.com/jackmedda/Intersectional-FA4GCF" class="pub-card-link" target="_blank">
             <i class="fab fa-github"></i> Code
           </a>
-          <a href="https://doi.org/10.1145/3655631" class="pub-card-link" target="_blank">
+          <a href="https://doi.org/10.1145/3798097" class="pub-card-link" target="_blank">
             <i class="ai ai-doi"></i> DOI
           </a>
         </div>
@@ -98,7 +98,7 @@ redirect_from:
           <a href="/projects/greenfoodlens/">GreenFoodLens: Sustainability Labels for Food Recommendation</a>
         </h3>
         <p class="pub-card-authors">
-          G. Balloccu, L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, C. Musto
+          G. Balloccu, L. Boratto, G. Fenu, M. Marras, <strong>G. Medda</strong>, G. Murgia
         </p>
         <div class="pub-card-links">
           <a href="/projects/greenfoodlens/" class="pub-card-link link-project">
@@ -108,28 +108,6 @@ redirect_from:
             <i class="fab fa-github"></i> Code
           </a>
           <a href="https://doi.org/10.1145/3705328.3748165" class="pub-card-link" target="_blank">
-            <i class="ai ai-doi"></i> DOI
-          </a>
-        </div>
-      </div>
-      
-      <!-- FA4GCF -->
-      <div class="pub-card">
-        <span class="pub-card-venue">RecSys 2024</span>
-        <h3 class="pub-card-title">
-          <a href="/projects/fa4gcf/">Fair Augmentation for Graph Collaborative Filtering</a>
-        </h3>
-        <p class="pub-card-authors">
-          L. Boratto, F. Fabbri, G. Fenu, M. Marras, <strong>G. Medda</strong>
-        </p>
-        <div class="pub-card-links">
-          <a href="/projects/fa4gcf/" class="pub-card-link link-project">
-            <i class="fas fa-flask"></i> Project
-          </a>
-          <a href="https://github.com/jackmedda/FA4GCF" class="pub-card-link" target="_blank">
-            <i class="fab fa-github"></i> Code
-          </a>
-          <a href="https://doi.org/10.1145/3640457.3688064" class="pub-card-link" target="_blank">
             <i class="ai ai-doi"></i> DOI
           </a>
         </div>
@@ -156,8 +134,30 @@ redirect_from:
           </a>
         </div>
       </div>
+
+      <!-- GNNUERS -->
+      <div class="pub-card">
+        <span class="pub-card-venue">ACM TIST 2024</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/gnnuers/">GNNUERS: Fairness Explanation in GNNs for Recommendation via Counterfactual Reasoning</a>
+        </h3>
+        <p class="pub-card-authors">
+          L. Boratto, F. Fabbri, G. Fenu, M. Marras, <strong>G. Medda</strong>
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/gnnuers/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/jackmedda/RS-BGExplainer" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1145/3655631" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div>
       
-      <!-- IC-AnnoMI -->
+      <!-- IC-AnnoMI
       <div class="pub-card">
         <span class="pub-card-venue">NLPAICs 2024</span>
         <h3 class="pub-card-title">
@@ -174,6 +174,28 @@ redirect_from:
             <i class="fab fa-github"></i> Code
           </a>
           <a href="https://aclanthology.org/2024.nlpaics-1.26/" class="pub-card-link" target="_blank">
+            <i class="ai ai-doi"></i> DOI
+          </a>
+        </div>
+      </div> -->
+
+      <!-- FA4GCF -->
+      <div class="pub-card">
+        <span class="pub-card-venue">RecSys 2024</span>
+        <h3 class="pub-card-title">
+          <a href="/projects/fa4gcf/">Fair Augmentation for Graph Collaborative Filtering</a>
+        </h3>
+        <p class="pub-card-authors">
+          L. Boratto, F. Fabbri, G. Fenu, M. Marras, <strong>G. Medda</strong>
+        </p>
+        <div class="pub-card-links">
+          <a href="/projects/fa4gcf/" class="pub-card-link link-project">
+            <i class="fas fa-flask"></i> Project
+          </a>
+          <a href="https://github.com/jackmedda/FA4GCF" class="pub-card-link" target="_blank">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://doi.org/10.1145/3640457.3688064" class="pub-card-link" target="_blank">
             <i class="ai ai-doi"></i> DOI
           </a>
         </div>
