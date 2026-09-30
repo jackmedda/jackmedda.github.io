@@ -1,0 +1,64 @@
+<!-- ==========================================================================
+     "NEW" badge injector
+     Adds a Spyro-green jewel badge to any element carrying a `data-added`
+     ISO date (YYYY-MM-DD), but only while that date is within the last 30
+     days. The window is recomputed on every page load against the visitor's
+     clock, so the badge expires on its own with no rebuild required.
+     Styles live in _sass/_gaming.scss (.pub-new-badge).
+     ========================================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  var WINDOW_DAYS = 30;
+  var DAY_MS = 86400000;
+
+  // Whole days between `data-added` and today (local time). Negative = future.
+  function daysSince(iso) {
+    if (!iso) return null;
+    var added = new Date(iso + 'T00:00:00');
+    if (isNaN(added.getTime())) return null;
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.floor((today - added) / DAY_MS);
+  }
+
+  function makeBadge() {
+    var host = document.createElement('span');
+    host.className = 'pub-new-badge';
+    host.setAttribute('role', 'img');
+    host.setAttribute('aria-label', 'New');
+
+    var gem = document.createElement('span');
+    gem.className = 'pub-new-badge__gem';
+
+    var label = document.createElement('span');
+    label.textContent = 'NEW';
+
+    gem.appendChild(label);
+    host.appendChild(gem);
+    return host;
+  }
+
+  function init() {
+    var cards = document.querySelectorAll('[data-added]');
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i];
+      if (card.querySelector('.pub-new-badge')) continue; // already badged
+      var d = daysSince(card.getAttribute('data-added'));
+      if (d === null || d < 0 || d > WINDOW_DAYS) continue;
+      // The badge is absolutely positioned; make sure the card can anchor it.
+      if (window.getComputedStyle(card).position === 'static') {
+        card.style.position = 'relative';
+      }
+      card.appendChild(makeBadge());
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
