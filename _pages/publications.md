@@ -8,7 +8,7 @@ layout: gaming-page
 <h2 class="publications-year">2026</h2>
 
 <!-- Featured Publication: Conformal LLM-as-a-Judge -->
-<div class="featured-publication">
+<div class="featured-publication" data-added="2026-09-29">
   <span class="pub-badge">✦ Featured Research</span>
   <div class="pub-links">
     <a href="/projects/conformal-llm-judge/" class="pub-link primary">
@@ -33,7 +33,7 @@ layout: gaming-page
 </div>
 
 <!-- Featured Publication: Compresso -->
-<div class="featured-publication">
+<div class="featured-publication" data-added="2026-09-29">
   <span class="pub-badge">✦ Featured Research</span>
   <div class="pub-links">
     <a href="/projects/compresso/" class="pub-link primary">
@@ -58,7 +58,7 @@ layout: gaming-page
 </div>
 
 <!-- Featured Publication: SAE Domain Adapters -->
-<div class="featured-publication">
+<div class="featured-publication" data-added="2026-09-29">
   <span class="pub-badge">✦ Featured Research</span>
   <div class="pub-links">
     <a href="/projects/sae-adapters/" class="pub-link primary">
@@ -83,7 +83,7 @@ layout: gaming-page
 </div>
 
 <!-- Featured Publication: hoploy -->
-<div class="featured-publication">
+<div class="featured-publication" data-added="2026-09-29">
   <span class="pub-badge">✦ Featured Research</span>
   <div class="pub-links">
     <a href="/projects/hoploy/" class="pub-link primary">

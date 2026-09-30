@@ -920,11 +920,11 @@ html {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   
-  /* Gem corner decoration */
+  /* Gem corner decoration — moved to bottom-right so the NEW badge owns the top-right */
   &::before {
     content: '💎';
     position: absolute;
-    top: -5px;
+    bottom: -5px;
     right: -5px;
     font-size: 2rem;
     opacity: 0.3;
@@ -971,6 +971,79 @@ html {
       color: $spyro-gold;
     }
   }
+}
+
+/* ==========================================================================
+   "NEW" BADGE
+   Auto-injected by assets/js (see _includes/new-badge.html) onto any card
+   carrying a recent `data-added` date. A tilted, Spelunky-style faceted jewel
+   in Spyro green, seated inside the top-right corner. It disappears on its own
+   30 days after `data-added`, computed on each page load.
+   ========================================================================== */
+.pub-new-badge {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.75rem;
+  z-index: 6;
+  pointer-events: none;
+  transform: rotate(18deg);
+  /* The neon glow lives on this un-clipped wrapper on purpose: clip-path is
+     applied AFTER filter, so a glow set on the clipped gem below would be
+     clipped away with it. The wrapper has no clip-path, so its drop-shadows
+     bloom around the gem's silhouette. */
+  filter:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 3px $spyro-green)
+    drop-shadow(0 0 7px $spyro-green)
+    drop-shadow(0 0 12px $spyro-green);
+  animation: pubNewBadgeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.pub-new-badge__gem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0.4rem 0.95rem;
+  font-family: $gaming-font-pixel;
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #04220f;
+  clip-path: polygon(11% 0, 89% 0, 100% 50%, 89% 100%, 11% 100%, 0 50%);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 46%),
+    linear-gradient(160deg, #4ADE80, #15803D);
+
+  span { position: relative; z-index: 1; }
+
+  &::before { /* inner table facet */
+    content: '';
+    position: absolute;
+    inset: 3px;
+    z-index: 0;
+    clip-path: polygon(11% 0, 89% 0, 100% 50%, 89% 100%, 11% 100%, 0 50%);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.30), transparent 55%);
+  }
+
+  &::after { /* crown facet lines */
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    clip-path: polygon(11% 0, 89% 0, 100% 50%, 89% 100%, 11% 100%, 0 50%);
+    background:
+      linear-gradient(90deg, transparent 49.4%, rgba(0, 0, 0, 0.18) 50%, transparent 50.6%),
+      linear-gradient(60deg, transparent 48%, rgba(255, 255, 255, 0.22) 50%, transparent 52%);
+  }
+}
+
+@keyframes pubNewBadgeIn {
+  from { opacity: 0; transform: rotate(18deg) scale(0.7); }
+  to   { opacity: 1; transform: rotate(18deg) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pub-new-badge { animation: none; }
 }
 
 .pub-card-venue {
