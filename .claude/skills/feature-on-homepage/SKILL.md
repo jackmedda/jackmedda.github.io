@@ -85,6 +85,8 @@ Rules:
   leading `<!-- Name -->` comment).
 - **Insert** the new card at the **top** of `.pub-cards-grid` (newest first).
 - The grid must still contain **exactly six** active cards. Count them before finishing.
+- **Bump the "View All Publications" button**: set `data-added` on `<a class="view-all-btn">`
+  (further down in `about.md`) to today's date, so its NEW badge flags that fresh work is inside.
 
 ## Step 5 — Report
 

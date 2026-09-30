@@ -226,7 +226,10 @@ redirect_from:
     </div>
     
     <div class="view-all-link">
-      <a href="/publications/" class="view-all-btn">
+      <!-- data-added = date of the most recent publication addition; the NEW
+           badge on this button auto-clears 30 days after it. Bump when a new
+           paper is added to the Publications page. -->
+      <a href="/publications/" class="view-all-btn" data-added="2026-09-29">
         <i class="fas fa-scroll"></i> View All Publications
       </a>
     </div>

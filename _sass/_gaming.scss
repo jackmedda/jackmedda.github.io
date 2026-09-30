@@ -1046,6 +1046,31 @@ html {
   .pub-new-badge { animation: none; }
 }
 
+/* Publications page: the blocks are wide, so scale the jewel up and brighten
+   its glow so it reads clearly against the large card. */
+.featured-publication .pub-new-badge {
+  top: 1rem;
+  right: 1rem;
+  filter:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 4px $spyro-green)
+    drop-shadow(0 0 10px $spyro-green)
+    drop-shadow(0 0 18px $spyro-green);
+}
+.featured-publication .pub-new-badge__gem {
+  padding: 0.55rem 1.35rem;
+  font-size: 0.7rem;
+}
+
+/* Homepage "View All Publications" button: the badge flags that new work is
+   inside. The button has no overflow clipping, so let the jewel poke above the
+   top-right corner with its full glow. */
+.view-all-link { position: relative; }
+.view-all-btn .pub-new-badge {
+  top: -0.9rem;
+  right: -0.5rem;
+}
+
 .pub-card-venue {
   display: inline-block;
   font-family: $gaming-font-pixel;
