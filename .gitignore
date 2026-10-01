@@ -5,5 +5,5 @@ _site/
 .vscode/
 
 # Paper files
-files/
-!files/GiacomoMedda_Resume_2025.pdf
+files/*
+!files/*resume*
